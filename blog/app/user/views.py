@@ -3,20 +3,13 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from django.core.mail import send_mail
-from django.contrib.auth.hashers import make_password
-from django.contrib.auth import get_user_model
 from rest_framework_simplejwt.tokens import RefreshToken
-import random
+from django.contrib.auth import get_user_model
 from django_filters.rest_framework import DjangoFilterBackend
-from django.shortcuts import get_object_or_404
-from app.post.models import Post
-from app.comment.models import Comment
-from app.like.models import Like
-from app.user.serializers import ProfilePicSerializer, ProfileSerializer, RegisterSerializer, LoginSerializer
-from app.follow.models import Follow
-
+from app.user.serializers import ForgotPasswordSerializer, LogoutSerializer, ProfilePicSerializer, ProfileSerializer, RegisterSerializer, LoginSerializer, ResendOTPSerializer, UserProfileSerializer, VerifyOTPSerializer
+from app.user.models import OTP
+import random
 User = get_user_model()
-
 
 def generate_otp():
     return str(random.randint(100000, 999999))
@@ -40,10 +33,14 @@ class AuthViewSet(ViewSet):
             user = serializer.save()
 
             otp = generate_otp()
-            user.otp = otp
+            OTP.objects.create(
+                user=user,
+                email=user.email,
+                otp=otp
+            )
             user.is_verified = False
             user.save()
-
+           
             send_mail(
                 "Verify your account",
                 f"Your OTP is {otp}",
@@ -61,22 +58,34 @@ class AuthViewSet(ViewSet):
     # ======================
     @action(detail=False, methods=["post"])
     def verify_otp(self, request):
-        email = request.data.get("email")
-        otp = request.data.get("otp")
+        
+        serializer = VerifyOTPSerializer(
+            data=request.data,
+            context={"request":request}
+        )
+        
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
 
-        user = User.objects.filter(email=email).first()
+        return Response({"message": "Verified successfully"}, status=200)
 
-        if not user:
-            return Response({"error": "User not found"}, status=404)
+    # ===========================
+    # Resend OTP
+    # ===========================
+    
+    @action(detail=False, methods=["post"])
+    def resend_otp(self, request):
+        
+        serializer = ResendOTPSerializer(
+            data=request.data,
+            context={"request":request}
+        )
+        
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
 
-        if user.otp != otp:
-            return Response({"error": "Invalid OTP"}, status=400)
+        return Response({"message": "OTP Resend successfully"}, status=200)
 
-        user.is_verified = True
-        user.otp = None
-        user.save()
-
-        return Response({"message": "Verified successfully"})
 
     # ======================
     # LOGIN
@@ -100,81 +109,67 @@ class AuthViewSet(ViewSet):
     # ======================
     # FORGOT PASSWORD
     # ======================
+    
     @action(detail=False, methods=["post"])
     def forgot_password(self, request):
-        email = request.data.get("email")
-
-        user = User.objects.filter(email=email).first()
-
-        if not user:
-            return Response({"error": "Email not registered"}, status=404)
-
-        otp = generate_otp()
-        user.otp = otp
-        user.save()
-
-        send_mail(
-            "Reset Password OTP",
-            f"Your OTP is {otp}",
-            "noreply@gmail.com",
-            [email],
-            fail_silently=True,
+        
+        serializer = ForgotPasswordSerializer(
+            data=request.data,
+            context={"request":request}
         )
+        
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
 
-        return Response({"message": "OTP sent", "email": email})
 
     # ======================
     # VERIFY RESET OTP
     # ======================
     @action(detail=False, methods=["post"])
     def verify_reset_otp(self, request):
-        email = request.data.get("email")
-        otp = request.data.get("otp")
-
-        user = User.objects.filter(email=email).first()
-
-        if not user:
-            return Response({"error": "User not found"}, status=404)
-
-        if user.otp != otp:
-            return Response({"error": "Invalid OTP"}, status=400)
-
-        return Response({"message": "OTP verified", "email": email})
-
+        
+        serializer = VerifyOTPSerializer(
+            data=request.data,
+            context={"request":request}
+        )
+        
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        
+        return Response({"message": "OTP verified"})
+    
     # ======================
     # RESET PASSWORD
     # ======================
     @action(detail=False, methods=["post"])
     def reset_password(self, request):
-        email = request.data.get("email")
-        password = request.data.get("password")
-
-        user = User.objects.filter(email=email).first()
-
-        if not user:
-            return Response({"error": "User not found"}, status=404)
-
-        user.password = make_password(password)
-        user.otp = None
-        user.save()
-
+        
+        serializer = VerifyOTPSerializer(
+            data=request.data,
+            context={"request":request}
+        )
+        
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        
         return Response({"message": "Password reset successful"})
-    
-    
+
     
     # ======================
     # LOGOUT
     # ======================
     @action(detail=False, methods=["post"], permission_classes=[IsAuthenticated])
     def logout(self, request):
-        try:
-            refresh_token = request.data.get("refresh")
-            token = RefreshToken(refresh_token)
-            token.blacklist()
-
-            return Response({"message": "Logged out"})
-        except Exception:
-            return Response({"error": "Invalid token"}, status=400)
+        
+        serializer = LogoutSerializer(
+                data=request.data,
+                context={"request":request}
+            )
+        
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        
+        return Response({"message": "Logout successful"})
 
     # ======================
     # DELETE ACCOUNT
@@ -192,64 +187,6 @@ class AuthViewSet(ViewSet):
         serializer = ProfileSerializer(request.user)
         return Response(serializer.data)
 
-    # ======================
-    # SPECIFIC USER PROFILE 
-    # ======================
-    @action(detail=False, methods=["get"], url_path="user-profile/(?P<username>[^/.]+)")
-    def user_profile(self, request, username=None):
-
-        user = get_object_or_404(User, username=username)
-
-        # follow or not 
-        if request.user.is_authenticated:
-            is_following = Follow.objects.filter(
-                follower=request.user,
-                following=user
-            ).exists()
-        else:
-            is_following = False
-
-        serializer = ProfileSerializer(user)
-
-        post_count = Post.objects.filter(user=user).count()
-        comment_count = Comment.objects.filter(user=user).count()
-        like_count = Like.objects.filter(user=user).count()
-        followers_count = Follow.objects.filter(following=user).count()
-        following_count = Follow.objects.filter(follower=user).count()
-
-        # unfollowed user 
-        if not (request.user == user or is_following):
-            return Response({
-                "user": serializer.data,
-                "is_following": False,
-                "counts": {
-                    "posts": post_count,
-                    "comments": comment_count,
-                    "likes": like_count,
-                    "followers": followers_count,
-                    "following": following_count
-                }
-            })
-
-        # followed user 
-        posts = Post.objects.filter(user=user)
-        comments = Comment.objects.filter(user=user)
-        likes = Like.objects.filter(user=user)
-
-        return Response({
-            "user": serializer.data,
-            "is_following": True,
-            "counts": {
-                "posts": post_count,
-                "comments": comment_count,
-                "likes": like_count,
-                "followers": followers_count,
-                "following": following_count
-            },
-            "posts": [{"id": p.id, "title": p.title, "content": p.content} for p in posts],
-            "comments": [{"id": c.id, "text": c.text, "post_id": c.post.id} for c in comments],
-            "likes_count": like_count
-        })
         
     # ======================
     # UPLOAD PROFILE PIC 
@@ -279,6 +216,24 @@ class AuthViewSet(ViewSet):
         request.user.save()
 
         return Response({"message": "Profile image removed"})
+    
+    
+    # ======================
+    # SPECIFIC USER PROFILE 
+    # ======================
+    @action(detail=False, methods=["get"], url_path="user-profile/(?P<username>[^/.]+)")
+    def user_profile(self, request, username=None):
+
+        serializer = UserProfileSerializer(
+            instance = None,
+            context ={
+                "request":request,
+                "username":username
+            }
+        )
+        
+        return Response(serializer.data)
+    
     
     # ======================
     # USER LIST 
