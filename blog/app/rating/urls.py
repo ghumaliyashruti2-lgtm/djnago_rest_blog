@@ -1,6 +1,6 @@
 from django.urls import path
-from app.rating.views import rate_post
+from app.rating.views import RatePostView
 
 urlpatterns = [
-    path('rate/', rate_post),
+    path('rate/', RatePostView.as_view()),
 ]

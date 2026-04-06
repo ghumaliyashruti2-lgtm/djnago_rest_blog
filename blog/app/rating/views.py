@@ -1,29 +1,28 @@
-from django.shortcuts import render
-
-# Create your views here.
-from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from django.shortcuts import get_object_or_404
-
+from rest_framework import status
+from rest_framework.generics import GenericAPIView
+from app.rating.serializers import RatingSerializer
+from rest_framework.permissions import IsAuthenticated
 from app.rating.models import Rating
-from app.post.models import Post
 
-@api_view(["POST"])
-@permission_classes([IsAuthenticated])
-def rate_post(request):
-    post_id = request.data.get("post")
-    rating_value = request.data.get("rating")
+class RatePostView(GenericAPIView):
+    queryset = Rating.objects.all()
+    serializer_class = RatingSerializer
+    permission_classes = [IsAuthenticated]
 
-    post = get_object_or_404(Post, id=post_id)
+    def post(self, request, *args, **kwargs):
+        
+        serializer = RatingSerializer(
+            data=request.data,
+            context={
+                "request":request
+            }
+        )
+        
+        serializer.is_valid(raise_exception=True)
+        rating=serializer.save()
 
-    rating_obj, created = Rating.objects.update_or_create(
-        user=request.user,
-        post=post,
-        defaults={"rating": rating_value}
-    )
-
-    return Response({
-        "message": "Submitted Rating",
-        "rating": rating_obj.rating
-    })
+        return Response({
+            "message": "Submitted Rating",
+            "rating": rating.rating
+        })
