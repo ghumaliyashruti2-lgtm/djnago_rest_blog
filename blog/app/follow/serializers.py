@@ -1,6 +1,9 @@
 from rest_framework import serializers
 from app.follow.models import Follow
-
+from django.shortcuts import get_object_or_404
+from app.user.models import User
+from app.notification.views import NotificationType, create_notification
+from rest_framework.permissions import IsAuthenticated
 
 class FollowSerializer(serializers.ModelSerializer):
     follower_username = serializers.CharField(source="follower.username", read_only=True)
@@ -16,21 +19,128 @@ class FollowSerializer(serializers.ModelSerializer):
             "following_username",
             "created_at"
         ]
-        read_only_fields = ["id", "follower", "created_at"]
+        
+        read_only_fields = ["id", "follower", "created_at" , "following"]
+        
 
     def validate(self, data):
         request = self.context.get("request")
         follower = request.user
-        following = data.get("following")
+        following = self.context.get("following")
+
+        if not following:
+            raise serializers.ValidationError({"following": "Invalid user"})  
 
         if follower == following:
             raise serializers.ValidationError("You cannot follow yourself")
 
-        if Follow.objects.filter(follower=follower, following=following).exists():
-            raise serializers.ValidationError("Already following this user")
-
         return data
+    
+    def save(self, **kwargs):
+        request = self.context.get("request")
+        follower = request.user
+        following = self.context.get("following")
 
-    def create(self, validated_data):
-        validated_data["follower"] = self.context["request"].user
-        return super().create(validated_data)
+        follow = Follow.objects.filter(
+            follower=follower,
+            following=following
+        ).first()
+
+        # ======================
+        # UNFOLLOW
+        # ======================
+        if follow:
+            follow.delete()
+            return {"message": "Unfollowed"}
+
+        # ======================
+        # FOLLOW
+        # ======================
+        follow = Follow.objects.create(
+            follower=follower,
+            following=following
+        )
+
+        # 🔔 Notification (optional)
+        if following != follower:
+            create_notification(
+                user=following,
+                sender=follower,
+                type=NotificationType.FOLLOW
+            )
+
+        return {
+            "message": "Followed",
+            "data":{
+                "follower":follower.username,
+                "following":following.username}
+        }
+        
+        
+class FollowStatusSerializer(serializers.Serializer):
+
+    user_id = serializers.IntegerField()
+    is_following = serializers.BooleanField(read_only=True)
+    message =serializers.CharField(read_only=True)
+
+    def validate_user_id(self, value):
+        user = get_object_or_404(User, id=value)
+        request = self.context["request"]
+        
+        if request.user == user:
+            raise serializers.ValidationError("You cannot follow yourself")
+        
+        return user
+    
+    def to_representation(self, instance):
+    
+        request = self.context.get("request")
+        follower = request.user
+        following = instance
+         
+        is_following = Follow.objects.filter(
+            follower=follower,
+            following=following
+        ).exists()
+        
+        message = (
+            f"You followed user {following.username}"
+            if is_following
+            else f"You not followed user {following.username}"
+        )
+        
+        return {
+            "following_user_id": following.id,
+            "is_following": is_following,
+            "message": message
+        }
+        
+class MyFollowerSerializer(serializers.Serializer):
+    
+    def to_representation(self, instance):
+        
+        if not instance:
+            return {"message":"No One follow you",
+                    "data":[]
+                    }
+            
+        return {
+            "message":"Followers List",
+            "data":FollowSerializer(instance,many=True).data
+        }
+      
+      
+class MyFollowingSerializer(serializers.Serializer):
+    
+    def to_representation(self, instance):
+        
+        if not instance:
+            return{"message":"No one you are following",
+                   "data":[]
+                   }
+            
+        return{
+            "message":"Following List",
+            "data":FollowSerializer(instance,many=True).data
+            }
+        
