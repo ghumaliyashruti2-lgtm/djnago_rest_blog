@@ -6,7 +6,7 @@ from django.core.mail import send_mail
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import get_user_model
 from django_filters.rest_framework import DjangoFilterBackend
-from app.user.serializers import ForgotPasswordSerializer, LogoutSerializer, ProfilePicSerializer, ProfileSerializer, RegisterSerializer, LoginSerializer, ResendOTPSerializer, UserProfileSerializer, VerifyOTPSerializer
+from app.user.serializers import ForgotPasswordSerializer, LogoutSerializer, ProfilePicSerializer, ProfileSerializer, RegisterSerializer, LoginSerializer, ResendOTPSerializer, ResetPasswordSerializer, UserProfileSerializer, VerifyOTPSerializer
 from app.user.models import OTP
 import random
 User = get_user_model()
@@ -120,6 +120,8 @@ class AuthViewSet(ViewSet):
         
         serializer.is_valid(raise_exception=True)
         serializer.save()
+        
+        return Response({"message":"OTP sent in your email"})
 
 
     # ======================
@@ -144,7 +146,7 @@ class AuthViewSet(ViewSet):
     @action(detail=False, methods=["post"])
     def reset_password(self, request):
         
-        serializer = VerifyOTPSerializer(
+        serializer = ResetPasswordSerializer(
             data=request.data,
             context={"request":request}
         )

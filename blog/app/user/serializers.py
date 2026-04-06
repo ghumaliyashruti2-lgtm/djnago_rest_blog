@@ -98,7 +98,6 @@ class VerifyOTPSerializer(serializers.Serializer):
 
         return self.user
 
-
 # =========================
 # Resend OTP
 # =========================
@@ -189,15 +188,19 @@ class ForgotPasswordSerializer(serializers.Serializer):
             raise serializers.ValidationError({"error": "Email not registered"})
         
         
-         self.context["user"] = user
+         self.user = user
          return data
      
      
      def save(self, **kwargs):
+        user = self.user
         otp = generate_otp()
-
-        self.user.otp = otp
-        self.user.save()
+        
+        OTP.objects.create(
+                user=user,
+                email=user.email,
+                otp=otp
+            )
 
         send_mail(
             "Reset Password OTP",
@@ -207,7 +210,7 @@ class ForgotPasswordSerializer(serializers.Serializer):
             fail_silently=True,
         )
 
-        return self.user
+        return user
 
 # ======================
 # VERIFY RESET OTP 
@@ -222,13 +225,21 @@ class VerifyResetOTPSerializer(serializers.Serializer):
         otp=data.get("otp")
         
         user = User.objects.filter(email=email).first()
-
+        
         if not user:
             raise serializers.ValidationError({"error": "User not found"})
-
-        if user.otp != otp:
-            raise serializers.ValidationError({"error": "Invalid OTP"})
         
+        otp_obj = OTP.objects.filter(email=email).order_by("-created_at").first()
+
+        if not otp_obj:
+            raise serializers.ValidationError({"error": "No OTP found"})
+
+        if otp_obj.otp != otp:
+            raise serializers.ValidationError({"error": "Invalid OTP"})
+
+        if otp_obj.is_expired():
+            raise serializers.ValidationError({"error": "OTP expired"})
+
         self.context["user"]=user
         return data
     
