@@ -12,8 +12,7 @@ class ToggleLikeSerializer(serializers.Serializer):
     post_id = serializers.IntegerField()
 
     def validate_post_id(self, value):
-        post = get_object_or_404(Post, id=value)
-        return post   
+        return get_object_or_404(Post, id=value)  
 
     def save(self, **kwargs):
         user = self.context["request"].user
@@ -21,7 +20,7 @@ class ToggleLikeSerializer(serializers.Serializer):
 
         like = Like.objects.filter(user=user, post=post).first()
 
-        # 🔴 UNLIKE
+        # UNLIKE
         if like:
             like.delete()
             return {
@@ -29,7 +28,7 @@ class ToggleLikeSerializer(serializers.Serializer):
                 "likes_count": post.likes.count()
             }
 
-        # 🟢 LIKE
+        #  LIKE
         Like.objects.create(user=user, post=post)
 
         if post.user != user:
@@ -44,3 +43,4 @@ class ToggleLikeSerializer(serializers.Serializer):
             "message": "Post liked",
             "likes_count": post.likes.count()
         }
+    

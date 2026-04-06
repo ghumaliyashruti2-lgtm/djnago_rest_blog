@@ -6,46 +6,21 @@ from django.shortcuts import get_object_or_404
 from app.like.models import Like
 from app.post.models import Post
 from app.notification.views import create_notification
+from app.like.serializers import ToggleLikeSerializer
 
 
 class ToggleLikeView(GenericAPIView):
 
     permission_classes = [IsAuthenticated]
-
+    
     def post(self, request, post_id):
-
-        post = get_object_or_404(Post, id=post_id)
-        user = request.user
-
-        like = Like.objects.filter(user=user, post=post).first()
-
-        # 🔴 UNLIKE
-        if like:
-            like.delete()
-            likes_count = post.likes.count()
-
-            return Response({
-                "message": "Post unliked",
-                "likes_count": likes_count
-            }, status=200)
-
-        # 🟢 LIKE
-        Like.objects.create(user=user, post=post)
-
-        # 🔔 Notification
-        if post.user != user:
-            create_notification(
-                user=post.user,
-                sender=user,
-                type="like",
-                post=post
-            )
-
-        likes_count = post.likes.count()
-
-        return Response({
-            "message": "Post liked",
-            "likes_count": likes_count
-        }, status=200)
         
+        serializer = ToggleLikeSerializer(
+            data = {"post_id":post_id},
+            context={"request":request}
+        )
         
+        serializer.is_valid(raise_exception=True)
+        data = serializer.save()
+        
+        return Response(data)
