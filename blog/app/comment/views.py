@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
-
+from app.user.serializers import ProfileSerializer
 from django_filters.rest_framework import DjangoFilterBackend
 
 from app.comment.models import Comment
@@ -21,18 +21,16 @@ class CommentViewSet(ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
 
-    # ✅ ADD FILTER HERE
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['post', 'user', 'parent']
     search_fields = ["text"]
 
-    # ✅ Permissions
     def get_permissions(self):
         if self.action in ["create", "reply", "update", "partial_update", "destroy"]:
             return [IsAuthenticated()]
         return [AllowAny()]
 
-    # ✅ Dynamic serializer
+    #  Dynamic serializer
     def get_serializer_class(self):
         if self.action == "create":
             return CreateCommentSerializer
@@ -44,29 +42,14 @@ class CommentViewSet(ModelViewSet):
     # CREATE COMMENT
     # ======================
     def create(self, request, *args, **kwargs):
+        post = get_object_or_404(Post, id=self.kwargs.get("post_id"))
 
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-
-        # ✅ get from URL
-        post_id = self.kwargs.get("post_id")
-        post = get_object_or_404(Post, id=post_id)
-
-        comment = Comment.objects.create(
-            text=serializer.validated_data["text"],
-            user=request.user,
-            post=post
+        serializer = self.get_serializer(
+            data=request.data,
+            context={"request": request, "post": post}
         )
-
-        # 🔔 notification
-        if post.user != request.user:
-            create_notification(
-                user=post.user,
-                sender=request.user,
-                type="comment",
-                post=post,
-                comment=comment
-            )
+        serializer.is_valid(raise_exception=True)
+        comment = serializer.save()
 
         return Response({
             "message": "Comment added",
@@ -78,36 +61,18 @@ class CommentViewSet(ModelViewSet):
     # ======================
     @action(detail=False, methods=["POST"])
     def reply(self, request):
-
-        serializer = self.get_serializer(data=request.data)
+        serializer = self.get_serializer(
+            data=request.data,
+            context={"request": request}
+        )
         serializer.is_valid(raise_exception=True)
-
-        parent = get_object_or_404(
-            Comment, id=serializer.validated_data["parent_id"]
-        )
-
-        comment = Comment.objects.create(
-            text=serializer.validated_data["text"],
-            user=request.user,
-            post=parent.post,
-            parent=parent
-        )
-
-        # 🔔 notification
-        if parent.user != request.user:
-            create_notification(
-                user=parent.user,
-                sender=request.user,
-                type="reply",
-                post=parent.post,
-                comment=comment
-            )
+        comment = serializer.save()
 
         return Response({
             "message": "Reply added",
             "comment_id": comment.id
         }, status=201)
-
+        
     # ======================
     # LIST COMMENTS (NOW USING FILTER)
     # ======================
@@ -128,30 +93,36 @@ class CommentViewSet(ModelViewSet):
     # UPDATE COMMENT
     # ======================
     def update(self, request, *args, **kwargs):
-
         comment = self.get_object()
 
-        if comment.user != request.user:
-            return Response({"error": "Unauthorized"}, status=403)
-
-        serializer = CreateCommentSerializer(data=request.data)
+        serializer = UpdateCommentSerializer(
+            comment,
+            data=request.data,
+            context={"request": request}
+        )
         serializer.is_valid(raise_exception=True)
-
-        comment.text = serializer.validated_data["text"]
-        comment.save()
+        serializer.save()
 
         return Response({"message": "Comment updated"})
+        
 
     # ======================
     # DELETE COMMENT
     # ======================
     def destroy(self, request, *args, **kwargs):
-
         comment = self.get_object()
 
-        if comment.user != request.user:
-            return Response({"error": "Unauthorized"}, status=403)
-
-        comment.delete()
+        serializer = DeleteCommentSerializer(
+            context={"request": request}
+        )
+        serializer.delete(comment)
 
         return Response({"message": "Comment deleted"})
+    
+    @action(detail=True, methods=["GET"], permission_classes=[IsAuthenticated], url_path="user/profile")
+    def user_profile(self, request, pk=None):
+        comment = self.get_object()
+        user = comment.user
+
+        serializer = ProfileSerializer(user)
+        return Response(serializer.data)

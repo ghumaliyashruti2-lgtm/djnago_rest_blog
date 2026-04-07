@@ -61,7 +61,7 @@ class FollowSerializer(serializers.ModelSerializer):
             following=following
         )
 
-        # 🔔 Notification (optional)
+        #  Notification (optional)
         if following != follower:
             create_notification(
                 user=following,
