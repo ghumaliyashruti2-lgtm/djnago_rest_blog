@@ -332,11 +332,8 @@ class ProfilePicSerializer(serializers.Serializer):
 # ======================
 class UserProfileSerializer(serializers.Serializer):
     
-    def to_representation(self,instance):
+    def to_representation(self,user):
         request = self.context.get("request")
-        username = self.context.get("username")
-        
-        user = get_object_or_404(User, username=username)
         
         if request.user.is_authenticated:
             is_following = Follow.objects.filter(

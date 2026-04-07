@@ -9,6 +9,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from app.user.serializers import ForgotPasswordSerializer, LogoutSerializer, ProfilePicSerializer, ProfileSerializer, RegisterSerializer, LoginSerializer, ResendOTPSerializer, ResetPasswordSerializer, UserProfileSerializer, VerifyOTPSerializer
 from app.user.models import OTP
 import random
+from django.shortcuts import get_object_or_404
 User = get_user_model()
 
 def generate_otp():
@@ -223,11 +224,12 @@ class AuthViewSet(ViewSet):
     # ======================
     # SPECIFIC USER PROFILE 
     # ======================
-    @action(detail=False, methods=["get"], url_path="user-profile/(?P<username>[^/.]+)")
+    @action(detail=False, methods=["get"], url_path="user_profile/(?P<username>[^/.]+)")
     def user_profile(self, request, username=None):
 
+        user = get_object_or_404(User,username=username)
         serializer = UserProfileSerializer(
-            instance = None,
+            instance = user,
             context ={
                 "request":request,
                 "username":username
