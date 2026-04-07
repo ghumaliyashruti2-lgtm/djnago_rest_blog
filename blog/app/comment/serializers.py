@@ -5,6 +5,8 @@ from app.user.serializers import ProfileSerializer
 from app.notification.views import create_notification
 from rest_framework.exceptions import PermissionDenied
 
+from app.follow.models import Follow
+
 # ======================
 # COMMENT SERIALIZER
 # ======================
@@ -28,6 +30,7 @@ class CommentSerializer(serializers.ModelSerializer):
 # ======================
 # CREATE COMMENT
 # ======================
+
 class CreateCommentSerializer(serializers.Serializer):
     
     text = serializers.CharField(max_length=500)
@@ -43,17 +46,33 @@ class CreateCommentSerializer(serializers.Serializer):
 
         return value
 
+   
+            
     def create(self, validated_data):
         request = self.context["request"]
         post = self.context["post"]
 
+        # check account private or not 
+        if post.user != request.user:  
+            
+            if post.user.is_private:  
+                
+                is_following = Follow.objects.filter(
+                    follower=request.user,
+                    following=post.user
+                ).exists()
+
+                if not is_following:
+                    raise serializers.ValidationError("Account is private")
+
+        # Create comment
         comment = Comment.objects.create(
             text=validated_data["text"],
             user=request.user,
             post=post
         )
 
-        # Notification logic here
+        # Notification
         if post.user != request.user:
             create_notification(
                 user=post.user,
@@ -95,7 +114,18 @@ class ReplyCommentSerializer(serializers.Serializer):
     def create(self, validated_data):
         request = self.context["request"]
         parent = Comment.objects.get(id=validated_data["parent_id"])
+        post = parent.post
 
+        if post.user != request.user:
+            if post.user.is_private:
+                is_following = Follow.objects.filter(
+                    follower=request.user,
+                    following=post.user
+                ).exists()
+
+                if not is_following:
+                    raise serializers.ValidationError("Account is private")
+                
         comment = Comment.objects.create(
             text=validated_data["text"],
             user=request.user,
