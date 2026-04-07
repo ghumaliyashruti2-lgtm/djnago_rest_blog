@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from app.notification.models import Notification
-from app.notification.serializers import NotificationSerializer
+from app.notification.serializers import MarkNotificationReadSerializer, NotificationSerializer
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
 from rest_framework.generics import GenericAPIView
@@ -74,44 +74,42 @@ class NotificationListView(ListAPIView):
 # ======================
 # MARK AS READ
 # ======================
-
 class NotificationMarkReadView(UpdateModelMixin, GenericAPIView):
 
     permission_classes = [IsAuthenticated]
     queryset = Notification.objects.all()
+    serializer_class = MarkNotificationReadSerializer
 
     def put(self, request, *args, **kwargs):
-
         notification = self.get_object()
 
-        if notification.user != request.user:
-            return Response({"error": "Unauthorized"}, status=403)
-
-        notification.is_read = True
-        notification.save()
+        serializer = self.get_serializer(
+            notification,
+            data={},
+            context={"request": request}
+        )
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
 
         return Response({"message": "Marked as read"})
 
 # ======================
 # DELETE NOTIFICATION
 # ======================
-
 class NotificationDeleteView(DestroyModelMixin, GenericAPIView):
 
     permission_classes = [IsAuthenticated]
     queryset = Notification.objects.all()
 
     def delete(self, request, *args, **kwargs):
-
         notification = self.get_object()
 
-        if notification.user != request.user:
-            return Response({"error": "Unauthorized"}, status=403)
-
-        notification.delete()
+        serializer = DeleteNotificationSerializer(
+            context={"request": request}
+        )
+        serializer.delete(notification)
 
         return Response({"message": "Notification deleted"})
-    
         
 # ======================
 # MARK AS UN-READ
