@@ -1,7 +1,8 @@
 from rest_framework import serializers
 from django.shortcuts import get_object_or_404
 from app.post.models import Post
-from .models import Rating
+from app.follow.models import Follow
+from app.rating.models import Rating
 
 class RatingSerializer(serializers.ModelSerializer):
     class Meta:
@@ -23,6 +24,17 @@ class RatingSerializer(serializers.ModelSerializer):
         user = self.context['request'].user
         post = self.validated_data.get('post')
         rating_value = self.validated_data.get('rating')
+        
+        if post.user != user:
+            if post.user.is_private:
+                is_following = Follow.objects.filter(
+                    follower=user,
+                    following=post.user
+                ).exists()
+
+                if not is_following:
+                    raise serializers.ValidationError("Account is private")
+
 
         rating_obj, create= Rating.objects.update_or_create(
             user=user,
