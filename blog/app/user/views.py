@@ -6,9 +6,10 @@ from django.core.mail import send_mail
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import get_user_model
 from django_filters.rest_framework import DjangoFilterBackend
-from app.user.serializers import ForgotPasswordSerializer, LogoutSerializer, ProfilePicSerializer, ProfileSerializer, RegisterSerializer, LoginSerializer, ResendOTPSerializer, ResetPasswordSerializer, UserProfileSerializer, VerifyOTPSerializer
+from app.user.serializers import ForgotPasswordSerializer, LogoutSerializer, ProfilePicSerializer, ProfileSerializer, RefreshTokenSerializer, RegisterSerializer, LoginSerializer, ResendOTPSerializer, ResetPasswordSerializer, UserProfileSerializer, VerifyOTPSerializer
 from app.user.models import OTP
 import random
+from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 from django.shortcuts import get_object_or_404
 User = get_user_model()
 
@@ -21,7 +22,6 @@ class AuthViewSet(ViewSet):
     
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['username', 'email', 'is_verified']
-    filterset_fields = ['username', 'email', 'id']
 
     # ======================
     # REGISTER
@@ -147,7 +147,7 @@ class AuthViewSet(ViewSet):
     @action(detail=False, methods=["post"])
     def reset_password(self, request):
         
-        serializer = ResetPasswordSerializer(
+        serializer = RefreshTokenSerializer(
             data=request.data,
             context={"request":request}
         )
@@ -158,6 +158,30 @@ class AuthViewSet(ViewSet):
         return Response({"message": "Password reset successful"})
 
     
+    # ===========================
+    # REFRESH TOKEN 
+    # ==========================
+
+    @action(detail=False, methods=["post"])
+    def refresh_token(self, request):
+        refresh_token = request.data.get("refresh")
+
+        if not refresh_token:
+            return Response({"error": "Refresh token required"}, status=400)
+
+        try:
+            token = RefreshToken(refresh_token)
+            access_token = token.access_token
+
+            return Response({
+                "access": str(access_token)
+            })
+
+        except TokenError:
+            return Response({"error": "Invalid or expired refresh token"}, status=400)
+        
+        
+        
     # ======================
     # LOGOUT
     # ======================

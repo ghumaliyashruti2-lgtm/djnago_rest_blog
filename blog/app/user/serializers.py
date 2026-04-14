@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model, authenticate
 from django.core.mail import send_mail
 from django.contrib.auth.hashers import make_password
 from django.shortcuts import get_object_or_404
-from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.tokens import RefreshToken,TokenError
 import random
 from app.follow.models import Follow
 from app.like.models import Like
@@ -271,6 +271,30 @@ class ResetPasswordSerializer(serializers.Serializer):
         self.user.password = make_password(password)
         self.user.save()
  
+ 
+# ======================
+# REFRESH TOKEN
+# ======================
+class RefreshTokenSerializer(serializers.Serializer):
+    
+    def validate(self, data):
+        refresh_token = data.get("refresh")
+        
+        if not refresh_token:
+            raise serializers.ValidationError({"error": "Refresh token required"}, status=400)
+
+        try:
+            token = RefreshToken(refresh_token)
+            access_token = token.access_token
+
+            return ({
+                "access": str(access_token)
+            })
+
+        except TokenError:
+            raise serializers.ValidationError({"error": "Invalid or expired refresh token"}, status=400)
+
+        
  
 # ======================
 # LOGOUT 
