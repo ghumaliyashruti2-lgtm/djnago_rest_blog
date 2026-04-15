@@ -10,6 +10,7 @@ from rest_framework.decorators import action
 from drf_yasg.utils import swagger_auto_schema
 from django_filters import rest_framework as filter
 from rest_framework.filters import SearchFilter, OrderingFilter
+from app.permission import IsOwnerOrReadOnly
 User = get_user_model()
 
 class postfilter(filter.FilterSet):
@@ -31,7 +32,7 @@ class PostViewSet(ModelViewSet):
 
     def get_permissions(self):
         if self.action in ["create", "update", "partial_update", "destroy"]:
-            return [IsAuthenticated()]
+            return [IsAuthenticated(), IsOwnerOrReadOnly()]
         return [AllowAny()]
 
     def list(self, request, *args, **kwargs):
@@ -53,7 +54,6 @@ class PostViewSet(ModelViewSet):
     
     def destroy(self, request, pk=None):
         post = self.get_object()
-        PostSerializer.validate_post_owner(request.user, post)
         post.delete()
         return Response({"msg": "Your data has been deleted"})
         '''post_obj = Post.objects.get(id = pk)

@@ -153,11 +153,7 @@ class UpdateCommentSerializer(serializers.Serializer):
     text = serializers.CharField()
 
     def update(self, instance, validated_data):
-        request = self.context["request"]
-
-        if instance.user != request.user:
-            raise PermissionDenied("You cannot edit this comment")
-
+        
         instance.text = validated_data.get("text",instance.text)
         instance.save()
         return instance
@@ -169,10 +165,6 @@ class UpdateCommentSerializer(serializers.Serializer):
 class DeleteCommentSerializer(serializers.Serializer):
 
     def delete(self, instance):
-        request = self.context["request"]
-
-        if instance.user != request.user:
-            raise PermissionDenied("You cannot delete this comment")
-
+    
         instance.delete()
         return instance

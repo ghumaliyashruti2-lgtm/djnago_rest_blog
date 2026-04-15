@@ -2,6 +2,7 @@
 
 from rest_framework.generics import GenericAPIView, ListAPIView
 from rest_framework.permissions import IsAuthenticated
+from app.permission import IsOwnerOrReadOnly
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from django.contrib.auth import get_user_model
@@ -10,13 +11,14 @@ from rest_framework.mixins import CreateModelMixin, DestroyModelMixin
 from app.follow.models import Follow
 from app.follow.serializers import FollowSerializer, FollowStatusSerializer, MyFollowerSerializer, MyFollowingSerializer
 from drf_yasg.utils import swagger_auto_schema
+
 User = get_user_model()
 
 
 class ToggleFollowView(CreateModelMixin, DestroyModelMixin, GenericAPIView):
 
     serializer_class = FollowSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated,IsOwnerOrReadOnly]
     queryset = Follow.objects.all()
     serializer_class = FollowSerializer 
     
@@ -46,7 +48,7 @@ class ToggleFollowView(CreateModelMixin, DestroyModelMixin, GenericAPIView):
        return Response(data)
    
 class FollowStatusView(GenericAPIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
     serializer_class = FollowStatusSerializer
         
     @ swagger_auto_schema(
@@ -70,7 +72,7 @@ class FollowStatusView(GenericAPIView):
        return Response(serializer.data)
     
 class MyFollowersView(ListAPIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['follower', 'following']
     serializer_class = MyFollowerSerializer 
@@ -101,7 +103,7 @@ class MyFollowersView(ListAPIView):
     
 class MyFollowingView(ListAPIView):
     
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated,IsOwnerOrReadOnly]
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['follower', 'following']
     serializer_class = MyFollowingSerializer

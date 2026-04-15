@@ -1,12 +1,14 @@
 from rest_framework.generics import GenericAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from rest_framework import permissions
 from app.like.serializers import ToggleLikeSerializer
 from drf_yasg.utils import swagger_auto_schema
+from app.permission import IsOwnerOrReadOnly
 
 class ToggleLikeView(GenericAPIView):
 
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
     serializer_class = ToggleLikeSerializer
     
     @ swagger_auto_schema(

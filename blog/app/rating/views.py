@@ -4,11 +4,13 @@ from rest_framework.generics import GenericAPIView
 from app.rating.serializers import RatingSerializer
 from rest_framework.permissions import IsAuthenticated
 from app.rating.models import Rating
+from app.permission import IsOwnerOrReadOnly
+
 
 class RatePostView(GenericAPIView):
     queryset = Rating.objects.all()
     serializer_class = RatingSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated,IsOwnerOrReadOnly]
 
     def post(self, request, *args, **kwargs):
         

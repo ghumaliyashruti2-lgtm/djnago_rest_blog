@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from app.notification.models import Notification
-from rest_framework.exceptions import PermissionDenied
 
 
 
@@ -37,11 +36,7 @@ class MarkNotificationReadSerializer(serializers.ModelSerializer):
         fields = []  # no input needed
 
     def update(self, instance, validated_data):
-        request = self.context["request"]
-
-        if instance.user != request.user:
-            raise PermissionDenied("You cannot modify this notification")
-
+    
         instance.is_read = True
         instance.save()
         return instance
@@ -49,11 +44,7 @@ class MarkNotificationReadSerializer(serializers.ModelSerializer):
 class DeleteNotificationSerializer(serializers.Serializer):
 
     def delete(self, instance):
-        request = self.context["request"]
-
-        if instance.user != request.user:
-            raise PermissionDenied("You cannot delete this notification")
-
+       
         instance.delete()
         return instance
     

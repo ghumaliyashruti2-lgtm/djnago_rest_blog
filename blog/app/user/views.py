@@ -2,6 +2,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from rest_framework import permissions
 from django.core.mail import send_mail
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import get_user_model
@@ -14,10 +15,12 @@ from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 from django.shortcuts import get_object_or_404
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
+from app.permission import IsOwnerOrReadOnly
 User = get_user_model()
 
 def generate_otp():
     return str(random.randint(100000, 999999))
+
 
 class AuthViewSet(ViewSet):
     queryset = User.objects.all()
@@ -236,7 +239,7 @@ class AuthViewSet(ViewSet):
         operation_id="User Logout"
     )
     
-    @action(detail=False, methods=["post"], permission_classes=[IsAuthenticated])
+    @action(detail=False, methods=["post"], permission_classes=[IsAuthenticated,IsOwnerOrReadOnly])
     def logout(self, request):
         
         serializer = LogoutSerializer(
@@ -259,7 +262,7 @@ class AuthViewSet(ViewSet):
         operation_id="Delete Account",
         
     )
-    @action(detail=False, methods=["delete"], permission_classes=[IsAuthenticated])
+    @action(detail=False, methods=["delete"], permission_classes=[IsAuthenticated,IsOwnerOrReadOnly])
     def delete_account(self, request):
 
         serializer = DeleteAccountSerializer(
@@ -279,7 +282,7 @@ class AuthViewSet(ViewSet):
         operation_id="User Profile"
     )
     
-    @action(detail=False, methods=["get"], permission_classes=[IsAuthenticated])
+    @action(detail=False, methods=["get"], permission_classes=[IsAuthenticated,IsOwnerOrReadOnly])
     def profile(self, request):
         serializer = ProfileSerializer(request.user)
         return Response(serializer.data)
@@ -293,7 +296,7 @@ class AuthViewSet(ViewSet):
         responses={"200": ProfilePicSerializer},
         operation_id="Upload User Profile"
     )
-    @action(detail=False, methods=["post"], permission_classes=[IsAuthenticated],parser_classes=[MultiPartParser, FormParser])
+    @action(detail=False, methods=["post"], permission_classes=[IsAuthenticated,IsOwnerOrReadOnly],parser_classes=[MultiPartParser, FormParser])
     def upload_profile_pic(self, request):
 
         serializer = ProfilePicSerializer(
@@ -314,7 +317,7 @@ class AuthViewSet(ViewSet):
         operation_id="User Profile Pic Delete "
     )
     
-    @action(detail=False, methods=["delete"], permission_classes=[IsAuthenticated])
+    @action(detail=False, methods=["delete"], permission_classes=[IsAuthenticated,IsOwnerOrReadOnly])
     def delete_profile_image(self, request):
         
         serializer = DeleteProfilePicSerializer(context={"request": request})

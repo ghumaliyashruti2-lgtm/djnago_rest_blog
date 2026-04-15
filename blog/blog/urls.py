@@ -39,13 +39,13 @@ permission_classes=(permissions.AllowAny,),
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/users/', include('app.user.urls')),
-    path('api/posts/', include('app.post.urls')),
-    path('api/comments/', include('app.comment.urls')),
-    path('api/notifications/', include('app.notification.urls')), 
-    path('api/likes/', include('app.like.urls')),    
-    path('api/follows/', include('app.follow.urls')), 
-    path('api/rates/', include('app.rating.urls')),   
+    path('api/', include('app.user.urls')),
+    path('api/', include('app.post.urls')),
+    path('api/', include('app.comment.urls')),
+    path('api/', include('app.notification.urls')), 
+    path('api/', include('app.like.urls')),    
+    path('api/', include('app.follow.urls')), 
+    path('api/', include('app.rating.urls')),   
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
 

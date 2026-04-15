@@ -144,15 +144,6 @@ class PostSerializer(serializers.ModelSerializer):
     def get_user_stats_by_username(username):
         user = get_object_or_404(User, username=username)
         return PostSerializer.get_user_stats(user)
-
-    # =========================
-    # PERMISSION CHECK
-    # =========================
-    @staticmethod
-    def validate_post_owner(request_user, post):
-        if post.user != request_user:
-            raise PermissionDenied("Not allowed")
-        
         
 class DeleteSerializer(serializers.Serializer):
     id = serializers.IntegerField()

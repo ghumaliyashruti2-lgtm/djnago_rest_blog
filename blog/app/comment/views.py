@@ -5,7 +5,6 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from app.user.serializers import ProfileSerializer
 from django_filters.rest_framework import DjangoFilterBackend
-
 from app.comment.models import Comment
 from app.post.models import Post
 from app.comment.serializers import (
@@ -16,7 +15,7 @@ from app.comment.serializers import (
     DeleteCommentSerializer
 )
 from app.notification.views import create_notification
-
+from app.permission import IsOwnerOrReadOnly
 
 class CommentViewSet(ModelViewSet):
 
@@ -29,7 +28,7 @@ class CommentViewSet(ModelViewSet):
 
     def get_permissions(self):
         if self.action in ["create", "reply", "update", "partial_update", "destroy"]:
-            return [IsAuthenticated()]
+            return [IsAuthenticated(),IsOwnerOrReadOnly()]
         return [AllowAny()]
 
     #  Dynamic serializer

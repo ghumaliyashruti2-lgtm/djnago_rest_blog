@@ -1,15 +1,15 @@
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
+from rest_framework import permissions
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from app.notification.models import Notification
 from app.notification.serializers import DeleteNotificationSerializer, MarkNotificationReadSerializer, NotificationSerializer, UnreadCountSerializer
-from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
 from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import UpdateModelMixin
 from rest_framework.mixins import DestroyModelMixin
-
+from app.permission import IsOwnerOrReadOnly
 # ======================
 # CREATE NOTIFICATION (helper)
 # ======================
@@ -59,7 +59,7 @@ class NotificationType:
 class NotificationListView(ListAPIView):
 
     serializer_class = NotificationSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated,IsOwnerOrReadOnly]
     
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['type', 'is_read', 'sender']
@@ -76,7 +76,7 @@ class NotificationListView(ListAPIView):
 # ======================
 class NotificationMarkReadView(UpdateModelMixin, GenericAPIView):
 
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated,IsOwnerOrReadOnly]
     queryset = Notification.objects.all()
     serializer_class = MarkNotificationReadSerializer
 
@@ -98,7 +98,7 @@ class NotificationMarkReadView(UpdateModelMixin, GenericAPIView):
 # ======================
 class NotificationDeleteView(DestroyModelMixin, GenericAPIView):
 
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
     serializer_class = DeleteNotificationSerializer
     queryset = Notification.objects.all()
 
@@ -117,7 +117,7 @@ class NotificationDeleteView(DestroyModelMixin, GenericAPIView):
 # ======================
 
 class UnreadCountView(GenericAPIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated,IsOwnerOrReadOnly]
     serializer_class = UnreadCountSerializer
 
     def get_queryset(self):
