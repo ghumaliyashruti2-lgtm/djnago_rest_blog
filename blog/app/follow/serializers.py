@@ -104,9 +104,9 @@ class FollowStatusSerializer(serializers.Serializer):
         ).exists()
         
         message = (
-            f"You followed user {following.username}"
+            f"You followed  {following.username}"
             if is_following
-            else f"You not followed user {following.username}"
+            else f"You not followed  {following.username}"
         )
         
         return {

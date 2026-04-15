@@ -149,11 +149,8 @@ class ReplyCommentSerializer(serializers.Serializer):
 # ========================
 # UPDATE COMMENT
 # ========================
-class UpdateCommentSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Comment
-        fields = ["text"]
+class UpdateCommentSerializer(serializers.Serializer):
+    text = serializers.CharField()
 
     def update(self, instance, validated_data):
         request = self.context["request"]
@@ -161,7 +158,7 @@ class UpdateCommentSerializer(serializers.ModelSerializer):
         if instance.user != request.user:
             raise PermissionDenied("You cannot edit this comment")
 
-        instance.text = validated_data["text"]
+        instance.text = validated_data.get("text",instance.text)
         instance.save()
         return instance
     

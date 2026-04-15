@@ -34,6 +34,16 @@ DEBUG = env("DEBUG", default=False, cast=bool)
 
 ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
 
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+        }
+    }
+}
+
 
 AUTH_USER_MODEL = 'user.User'
 
@@ -79,6 +89,7 @@ INSTALLED_APPS = [
     'app.follow',
     'django_filters',
     'app.rating',
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [

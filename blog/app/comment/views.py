@@ -12,6 +12,8 @@ from app.comment.serializers import (
     CommentSerializer,
     CreateCommentSerializer,
     ReplyCommentSerializer,
+    UpdateCommentSerializer,
+    DeleteCommentSerializer
 )
 from app.notification.views import create_notification
 
@@ -94,7 +96,7 @@ class CommentViewSet(ModelViewSet):
     # ======================
     def update(self, request, *args, **kwargs):
         comment = self.get_object()
-
+        
         serializer = UpdateCommentSerializer(
             comment,
             data=request.data,

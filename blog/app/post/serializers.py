@@ -23,6 +23,7 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = ["id", "title", "content", "image", "user", "is_private", "created_at","average_rating", "total_ratings"]
         read_only_fields = ["id", "user", "created_at","average_rating", "total_ratings"]
+        depth = 1 
 
     def validate_title(self, value):
         value = value.strip()
@@ -124,7 +125,7 @@ class PostSerializer(serializers.ModelSerializer):
         return Post.objects.filter(user=user).order_by("-created_at")
 
     # =========================
-    # USER STATS
+    # USER STATUS
     # =========================
     @staticmethod
     def get_user_stats(user):
@@ -151,3 +152,7 @@ class PostSerializer(serializers.ModelSerializer):
     def validate_post_owner(request_user, post):
         if post.user != request_user:
             raise PermissionDenied("Not allowed")
+        
+        
+class DeleteSerializer(serializers.Serializer):
+    id = serializers.IntegerField()

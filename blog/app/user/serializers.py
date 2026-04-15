@@ -320,7 +320,30 @@ class LogoutSerializer(serializers.Serializer):
         except Exception:
             raise serializers.ValidationError({"Invalid Token"})
 
+# ======================
+# DELETE ACCOUNT
+# ======================    
+class DeleteAccountSerializer(serializers.Serializer):
+    password = serializers.CharField()
     
+    password = serializers.CharField(write_only=True)
+
+    def validate(self, data):
+        user = self.context["request"].user
+        password = data.get("password")
+
+        if not user.check_password(password):
+            raise serializers.ValidationError({
+                "password": "Incorrect password"
+            })
+
+        return data
+    
+    def save(self, **kwargs):
+        user = self.context["request"].user
+        user.delete()
+        return {"message": "Account deleted successfully"}
+
 # ======================
 # PROFILE
 # ======================
@@ -340,16 +363,33 @@ class ProfileSerializer(serializers.ModelSerializer):
 # UPLOAD PROFILE PIC
 # ======================
 class ProfilePicSerializer(serializers.Serializer):
-
     profile_pic = serializers.ImageField()
 
     def validate_profile_pic(self, value):
-
         if not value.name.lower().endswith((".png", ".jpg", ".jpeg")):
             raise serializers.ValidationError("Invalid file type")
-
         return value
+
+    def update(self, instance, validated_data):
+        instance.profile_pic = validated_data.get("profile_pic")
+        instance.save()
+        return {
+            "profile_pic": instance.profile_pic.url
+        }
     
+    
+# ======================
+# DELETE PROFILE PIC 
+# ======================
+class DeleteProfilePicSerializer(serializers.Serializer):
+    def save(self, **kwargs):
+        user = self.context["request"].user
+        user.profile_pic = "profile_pictures/default_profile.png"
+        user.save()
+
+        return {
+            "message": "Profile image removed"
+        }
     
 # ======================
 # SPECIFIC USER PROFILE 
@@ -359,7 +399,7 @@ class UserProfileSerializer(serializers.Serializer):
     def to_representation(self,user):
         request = self.context.get("request")
         
-        if request.user.is_authenticated:
+        if request and request.user.is_authenticated:
             is_following = Follow.objects.filter(
             follower=request.user,
             following=user
@@ -383,7 +423,7 @@ class UserProfileSerializer(serializers.Serializer):
                 "comments":comment_count,
                 "likes":like_count,
                 "followers":followers_count,
-                "follwings":following_count
+                "followings":following_count
             }
         }
         
@@ -408,4 +448,4 @@ class UserProfileSerializer(serializers.Serializer):
         data["likes_count"]= like_count
         
         return data 
-        
+     

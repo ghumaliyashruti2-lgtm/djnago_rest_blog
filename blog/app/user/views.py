@@ -6,26 +6,34 @@ from django.core.mail import send_mail
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import get_user_model
 from django_filters.rest_framework import DjangoFilterBackend
-from app.user.serializers import ForgotPasswordSerializer, LogoutSerializer, ProfilePicSerializer, ProfileSerializer, RefreshTokenSerializer, RegisterSerializer, LoginSerializer, ResendOTPSerializer, ResetPasswordSerializer, UserProfileSerializer, VerifyOTPSerializer
+from app.user.serializers import DeleteAccountSerializer, DeleteProfilePicSerializer, ForgotPasswordSerializer, LogoutSerializer, ProfilePicSerializer, ProfileSerializer, RefreshTokenSerializer, RegisterSerializer, LoginSerializer, ResendOTPSerializer, ResetPasswordSerializer, UserProfileSerializer, VerifyOTPSerializer
 from app.user.models import OTP
+from rest_framework.parsers import MultiPartParser, FormParser
 import random
 from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 from django.shortcuts import get_object_or_404
+from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
 User = get_user_model()
 
 def generate_otp():
     return str(random.randint(100000, 999999))
 
-
 class AuthViewSet(ViewSet):
-    
-    
+    queryset = User.objects.all()
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['username', 'email', 'is_verified']
+    serializer_class = RegisterSerializer
 
     # ======================
     # REGISTER
     # ======================
+    @swagger_auto_schema(
+        request_body=RegisterSerializer,
+        responses={"200":RegisterSerializer},
+        operation_id="User Register"
+    )
+        
     @action(detail=False, methods=["post"])
     def register(self, request):
         
@@ -57,6 +65,11 @@ class AuthViewSet(ViewSet):
     # ======================
     # VERIFY OTP
     # ======================
+    @swagger_auto_schema(
+        request_body=VerifyOTPSerializer,
+        responses={"200":VerifyOTPSerializer},
+        operation_id="User Verify Otp"
+    )
     @action(detail=False, methods=["post"])
     def verify_otp(self, request):
         
@@ -73,7 +86,12 @@ class AuthViewSet(ViewSet):
     # ===========================
     # Resend OTP
     # ===========================
-    
+    @swagger_auto_schema(
+        request_body=ResendOTPSerializer,
+        responses={"200":ResendOTPSerializer,},
+        operation_id="User Resend Otp",
+    )
+        
     @action(detail=False, methods=["post"])
     def resend_otp(self, request):
         
@@ -91,6 +109,12 @@ class AuthViewSet(ViewSet):
     # ======================
     # LOGIN
     # ======================
+    @swagger_auto_schema(
+        request_body=LoginSerializer,
+        responses={"200":LoginSerializer},
+        operation_id="User Login"
+    )
+    
     @action(detail=False, methods=["post"])
     def login(self, request):
         serializer = LoginSerializer(data=request.data)
@@ -110,6 +134,11 @@ class AuthViewSet(ViewSet):
     # ======================
     # FORGOT PASSWORD
     # ======================
+    @swagger_auto_schema(
+        request_body=ForgotPasswordSerializer,
+        responses={"200":ForgotPasswordSerializer},
+        operation_id="User Forgot Password"
+    )
     
     @action(detail=False, methods=["post"])
     def forgot_password(self, request):
@@ -128,6 +157,12 @@ class AuthViewSet(ViewSet):
     # ======================
     # VERIFY RESET OTP
     # ======================
+    @swagger_auto_schema(
+        request_body=ResendOTPSerializer,
+        responses={"200":ResendOTPSerializer},
+        operation_id="User Verify Reset Otp"
+    )
+    
     @action(detail=False, methods=["post"])
     def verify_reset_otp(self, request):
         
@@ -144,6 +179,12 @@ class AuthViewSet(ViewSet):
     # ======================
     # RESET PASSWORD
     # ======================
+    @swagger_auto_schema(
+        request_body=ResetPasswordSerializer,
+        responses={"200":ResetPasswordSerializer},
+        operation_id="User Reset Password"
+    )
+    
     @action(detail=False, methods=["post"])
     def reset_password(self, request):
         
@@ -161,7 +202,12 @@ class AuthViewSet(ViewSet):
     # ===========================
     # REFRESH TOKEN 
     # ==========================
-
+    @swagger_auto_schema(
+        request_body=RefreshTokenSerializer,
+        responses={"200":RefreshTokenSerializer},
+        operation_id="User Refresh Token"
+    )
+    
     @action(detail=False, methods=["post"])
     def refresh_token(self, request):
         refresh_token = request.data.get("refresh")
@@ -179,12 +225,17 @@ class AuthViewSet(ViewSet):
 
         except TokenError:
             return Response({"error": "Invalid or expired refresh token"}, status=400)
-        
-        
+
         
     # ======================
     # LOGOUT
     # ======================
+    @swagger_auto_schema(
+        request_body=LogoutSerializer,
+        responses={"200":LogoutSerializer},
+        operation_id="User Logout"
+    )
+    
     @action(detail=False, methods=["post"], permission_classes=[IsAuthenticated])
     def logout(self, request):
         
@@ -201,14 +252,33 @@ class AuthViewSet(ViewSet):
     # ======================
     # DELETE ACCOUNT
     # ======================
+    
+    @swagger_auto_schema(
+        request_body=DeleteAccountSerializer,
+        responses={"200":DeleteAccountSerializer},
+        operation_id="Delete Account",
+        
+    )
     @action(detail=False, methods=["delete"], permission_classes=[IsAuthenticated])
     def delete_account(self, request):
-        request.user.delete()
-        return Response({"message": "Account deleted"})
+
+        serializer = DeleteAccountSerializer(
+            data=request.data,
+            context={"request": request}
+        )
+        serializer.is_valid(raise_exception=True)
+        data = serializer.save()
+
+        return Response(data)
         
     # ======================
     # PROFILE 
     # ======================
+    @swagger_auto_schema(
+        responses={"200":ProfileSerializer},
+        operation_id="User Profile"
+    )
+    
     @action(detail=False, methods=["get"], permission_classes=[IsAuthenticated])
     def profile(self, request):
         serializer = ProfileSerializer(request.user)
@@ -218,36 +288,56 @@ class AuthViewSet(ViewSet):
     # ======================
     # UPLOAD PROFILE PIC 
     # ======================
-    
-    @action(detail=False, methods=["post"], permission_classes=[IsAuthenticated])
+    @swagger_auto_schema(
+        request_body=ProfilePicSerializer,
+        responses={"200": ProfilePicSerializer},
+        operation_id="Upload User Profile"
+    )
+    @action(detail=False, methods=["post"], permission_classes=[IsAuthenticated],parser_classes=[MultiPartParser, FormParser])
     def upload_profile_pic(self, request):
-        serializer = ProfilePicSerializer(data=request.data)
 
-        if serializer.is_valid():
-            request.user.profile_pic = serializer.validated_data["profile_pic"]
-            request.user.save()
+        serializer = ProfilePicSerializer(
+            instance=request.user,  
+            data=request.data
+        )
 
-            return Response({
-                "message": "Profile picture updated",
-                "profile_pic": request.user.profile_pic.url
-            })
+        serializer.is_valid(raise_exception=True)
+        data = serializer.save()
 
-        return Response(serializer.errors, status=400)
+        return Response(data)
     
     # ======================
     # DELETE PROFILE PIC 
     # ======================
+    @swagger_auto_schema(
+        responses={"200": DeleteProfilePicSerializer},
+        operation_id="User Profile Pic Delete "
+    )
+    
     @action(detail=False, methods=["delete"], permission_classes=[IsAuthenticated])
     def delete_profile_image(self, request):
-        request.user.profile_pic = None
-        request.user.save()
-
-        return Response({"message": "Profile image removed"})
-    
+        
+        serializer = DeleteProfilePicSerializer(context={"request": request})
+        data = serializer.save()
+        return Response(data)
+            
     
     # ======================
     # SPECIFIC USER PROFILE 
     # ======================
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter(
+                'username',
+                openapi.IN_PATH,
+                description="Username of the user",
+                type=openapi.TYPE_STRING
+            )
+        ],
+        responses={200: UserProfileSerializer},
+        operation_id="Specific User Profile"
+    )
+    
     @action(detail=False, methods=["get"], url_path="user_profile/(?P<username>[^/.]+)")
     def user_profile(self, request, username=None):
 
@@ -266,14 +356,12 @@ class AuthViewSet(ViewSet):
     # ======================
     # USER LIST 
     # ======================
-    @action(detail=False, methods=["get"], permission_classes=[IsAuthenticated])
+    @swagger_auto_schema(
+        responses={200: ProfileSerializer(many=True)},
+        operation_id="User List"
+    )
+    @action(detail=False, methods=["get"])
     def user_list(self, request):
-        queryset = User.objects.all()   
-
-        filter_backend = DjangoFilterBackend()
-        queryset = filter_backend.filter_queryset(
-            request, queryset, self
-        )
-
-        serializer = ProfileSerializer(queryset, many=True)  
+        queryset = User.objects.all()
+        serializer = ProfileSerializer(queryset, many=True)
         return Response(serializer.data)

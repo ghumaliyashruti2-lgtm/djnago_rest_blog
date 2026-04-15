@@ -35,6 +35,7 @@ class ToggleLikeSerializer(serializers.Serializer):
         if like:
             like.delete()
             return {
+                "post_id":post.id,
                 "message": "Post unliked",
                 "likes_count": post.likes.count()
             }
@@ -52,6 +53,7 @@ class ToggleLikeSerializer(serializers.Serializer):
             )
 
         return {
+            "post_id":post.id,
             "message": "Post liked",
             "likes_count": post.likes.count()
         }

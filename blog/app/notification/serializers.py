@@ -9,7 +9,7 @@ class NotificationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Notification
-        fields = ["user_id", "message", "is_read", "created_at"]
+        fields = ["id","user_id", "message", "is_read", "created_at"]
 
     def get_message(self, obj):
         sender_name = obj.sender.username if obj.sender else "Someone"
@@ -56,3 +56,11 @@ class DeleteNotificationSerializer(serializers.Serializer):
 
         instance.delete()
         return instance
+    
+
+# ====================
+# READ COUNT 
+# =====================
+
+class UnreadCountSerializer(serializers.Serializer):
+    count = serializers.IntegerField()

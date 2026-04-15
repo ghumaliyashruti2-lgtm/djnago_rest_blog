@@ -1,18 +1,20 @@
 from rest_framework.generics import GenericAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from django.shortcuts import get_object_or_404
-
-from app.like.models import Like
-from app.post.models import Post
-from app.notification.views import create_notification
 from app.like.serializers import ToggleLikeSerializer
-
+from drf_yasg.utils import swagger_auto_schema
 
 class ToggleLikeView(GenericAPIView):
 
     permission_classes = [IsAuthenticated]
+    serializer_class = ToggleLikeSerializer
     
+    @ swagger_auto_schema(
+        operation_description= "Like/Unlike Post",
+        request_body = ToggleLikeSerializer,
+        response = {200:ToggleLikeSerializer,},
+        operation_id = "Like"
+    )
     def post(self, request, post_id):
         
         serializer = ToggleLikeSerializer(

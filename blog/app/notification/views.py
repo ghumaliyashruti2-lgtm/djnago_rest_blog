@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from app.notification.models import Notification
-from app.notification.serializers import MarkNotificationReadSerializer, NotificationSerializer
+from app.notification.serializers import DeleteNotificationSerializer, MarkNotificationReadSerializer, NotificationSerializer, UnreadCountSerializer
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
 from rest_framework.generics import GenericAPIView
@@ -99,6 +99,7 @@ class NotificationMarkReadView(UpdateModelMixin, GenericAPIView):
 class NotificationDeleteView(DestroyModelMixin, GenericAPIView):
 
     permission_classes = [IsAuthenticated]
+    serializer_class = DeleteNotificationSerializer
     queryset = Notification.objects.all()
 
     def delete(self, request, *args, **kwargs):
@@ -117,6 +118,7 @@ class NotificationDeleteView(DestroyModelMixin, GenericAPIView):
 
 class UnreadCountView(GenericAPIView):
     permission_classes = [IsAuthenticated]
+    serializer_class = UnreadCountSerializer
 
     def get_queryset(self):
         return Notification.objects.filter(
@@ -126,3 +128,5 @@ class UnreadCountView(GenericAPIView):
 
     def get(self, request, *args, **kwargs):
         return Response({"unread": self.get_queryset().count()})
+    
+    
