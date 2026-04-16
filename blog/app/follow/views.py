@@ -11,6 +11,7 @@ from rest_framework.mixins import CreateModelMixin, DestroyModelMixin
 from app.follow.models import Follow
 from app.follow.serializers import FollowSerializer, FollowStatusSerializer, MyFollowerSerializer, MyFollowingSerializer
 from drf_yasg.utils import swagger_auto_schema
+from app.pagination import NumPagination
 
 User = get_user_model()
 
@@ -21,6 +22,7 @@ class ToggleFollowView(CreateModelMixin, DestroyModelMixin, GenericAPIView):
     permission_classes = [IsAuthenticated,IsOwnerOrReadOnly]
     queryset = Follow.objects.all()
     serializer_class = FollowSerializer 
+    pagination_class = NumPagination
     
     
     @ swagger_auto_schema(
@@ -76,30 +78,19 @@ class MyFollowersView(ListAPIView):
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['follower', 'following']
     serializer_class = MyFollowerSerializer 
-
-    def get_queryset(self):
-        return Follow.objects.filter(
-            following=self.request.user
-        ).select_related("follower", "following")
-        
-            
+    pagination_class = NumPagination
+    
     @ swagger_auto_schema(
         operation_description="followers user list",
         response = {200:MyFollowerSerializer(many=True),},
         operation_id = "Follow List"
     )
 
-
-    def list(self, request, *args, **kwargs):
-        queryset = self.filter_queryset(self.get_queryset())
-
-        serializer = MyFollowerSerializer(
-            instance=queryset,
-            context={"request":request}
-        )
-    
-        return Response(serializer.data)
-       
+    def get_queryset(self):
+        return Follow.objects.filter(
+            following=self.request.user
+        ).select_related("follower", "following")
+        
     
 class MyFollowingView(ListAPIView):
     
@@ -107,28 +98,20 @@ class MyFollowingView(ListAPIView):
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['follower', 'following']
     serializer_class = MyFollowingSerializer
-
-    def get_queryset(self):
-        return Follow.objects.filter(
-            follower=self.request.user
-        ).select_related("follower", "following")
-        
+    pagination_class = NumPagination
+    
     @ swagger_auto_schema(
         operation_description="following user list",
         response = {200:MyFollowingSerializer(many=True),},
         operation_id = "Follow List"
     )
-
-    def list(self, request, *args, **kwargs):
-        queryset = self.filter_queryset(self.get_queryset())
-
-        serializer = MyFollowingSerializer(
-            instance=queryset,
-            context={"request":request}
-        )
-        return Response(serializer.data)
-       
+    
+    def get_queryset(self):
+        return Follow.objects.filter(
+            follower=self.request.user
+        ).select_related("follower", "following")
         
+
         
         
     

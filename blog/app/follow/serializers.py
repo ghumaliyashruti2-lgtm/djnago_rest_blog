@@ -115,32 +115,28 @@ class FollowStatusSerializer(serializers.Serializer):
             "message": message
         }
         
-class MyFollowerSerializer(serializers.Serializer):
-    
-    def to_representation(self, instance):
         
-        if not instance:
-            return {"message":"No One follow you",
-                    "data":[]
-                    }
-            
-        return {
-            "message":"Followers List",
-            "data":FollowSerializer(instance,many=True).data
-        }
-      
-      
-class MyFollowingSerializer(serializers.Serializer):
-    
-    def to_representation(self, instance):
         
-        if not instance:
-            return{"message":"No one you are following",
-                   "data":[]
-                   }
-            
-        return{
-            "message":"Following List",
-            "data":FollowSerializer(instance,many=True).data
-            }
+class MyFollowerSerializer(serializers.ModelSerializer):
+    follower_username = serializers.CharField(source="follower.username", read_only=True)
+
+    class Meta:
+        model = Follow
+        fields = [
+            "id",
+            "follower",
+            "follower_username",
+            "created_at"
+        ]
         
+class MyFollowingSerializer(serializers.ModelSerializer):
+    following_username = serializers.CharField(source="following.username", read_only=True)
+
+    class Meta:
+        model = Follow
+        fields = [
+            "id",
+            "following",
+            "following_username",
+            "created_at"
+        ]

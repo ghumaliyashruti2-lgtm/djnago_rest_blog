@@ -16,12 +16,13 @@ from app.comment.serializers import (
 )
 from app.notification.views import create_notification
 from app.permission import IsOwnerOrReadOnly
+from app.pagination import NumPagination
 
 class CommentViewSet(ModelViewSet):
 
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-
+    pagination_class = NumPagination
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['post', 'user', 'parent']
     search_fields = ["text"]
@@ -86,9 +87,15 @@ class CommentViewSet(ModelViewSet):
             queryset = queryset.filter(post_id=post_id)
 
         queryset = queryset.filter(parent__isnull=True)
+        
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
 
-        serializer = CommentSerializer(queryset, many=True)
+        serializer = self.get_serializer(queryset, many=True)
         return Response({"comments": serializer.data})
+        
 
     # ======================
     # UPDATE COMMENT

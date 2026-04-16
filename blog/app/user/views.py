@@ -16,6 +16,7 @@ from django.shortcuts import get_object_or_404
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from app.permission import IsOwnerOrReadOnly
+from app.pagination import NumPagination
 User = get_user_model()
 
 def generate_otp():
@@ -27,6 +28,7 @@ class AuthViewSet(ViewSet):
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['username', 'email', 'is_verified']
     serializer_class = RegisterSerializer
+    pagination_class = NumPagination
 
     # ======================
     # REGISTER
@@ -366,5 +368,13 @@ class AuthViewSet(ViewSet):
     @action(detail=False, methods=["get"])
     def user_list(self, request):
         queryset = User.objects.all()
+        
+        paginator = NumPagination()
+        page = paginator.paginate_queryset(queryset, request)
+        
+        if page is not None:
+            serializer = ProfileSerializer(page, many=True)
+            return paginator.get_paginated_response(serializer.data)
+
         serializer = ProfileSerializer(queryset, many=True)
         return Response(serializer.data)

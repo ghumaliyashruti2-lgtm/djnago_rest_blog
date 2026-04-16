@@ -11,6 +11,7 @@ from drf_yasg.utils import swagger_auto_schema
 from django_filters import rest_framework as filter
 from rest_framework.filters import SearchFilter, OrderingFilter
 from app.permission import IsOwnerOrReadOnly
+from app.pagination import NumPagination
 User = get_user_model()
 
 class postfilter(filter.FilterSet):
@@ -24,6 +25,8 @@ class postfilter(filter.FilterSet):
 class PostViewSet(ModelViewSet):
     queryset = Post.objects.all().order_by("-created_at")
     serializer_class = PostSerializer
+    pagination_class = NumPagination
+    
     filter_backends = [DjangoFilterBackend,SearchFilter, OrderingFilter]
     #filterset_fields = ["title"]
     filterset_class = postfilter
@@ -36,9 +39,19 @@ class PostViewSet(ModelViewSet):
         return [AllowAny()]
 
     def list(self, request, *args, **kwargs):
-        queryset = self.filter_queryset(self.get_queryset())
+        queryset = PostSerializer.get_filtered_posts(request)
+
+        # apply filters (search, ordering, etc.)
+        queryset = self.filter_queryset(queryset)
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
+        
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
@@ -68,8 +81,15 @@ class PostViewSet(ModelViewSet):
     @action(detail=False, methods=['get'], permission_classes=[IsAuthenticated])
     def my_posts(self, request):
         posts = PostSerializer.get_user_posts(request.user)
+        
+        page = self.paginate_queryset(posts)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+        
         serializer = self.get_serializer(posts, many=True)
         return Response(serializer.data)
+
 
     @action(detail=True, methods=['get'], url_path='user')
     def get_post_owner(self, request, pk=None):
@@ -77,7 +97,3 @@ class PostViewSet(ModelViewSet):
         data = PostSerializer.get_user_stats(post.user)
         return Response(data)
 
-    @action(detail=False, methods=['get'], url_path='user/(?P<username>[^/.]+)')
-    def get_user_by_username(self, request, username=None):
-        data = PostSerializer.get_user_stats_by_username(username)
-        return Response(data)

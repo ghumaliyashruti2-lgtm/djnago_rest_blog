@@ -139,11 +139,6 @@ class PostSerializer(serializers.ModelSerializer):
             "followers": Follow.objects.filter(following=user).count(),
             "followings": Follow.objects.filter(follower=user).count(),
         }
-
-    @staticmethod
-    def get_user_stats_by_username(username):
-        user = get_object_or_404(User, username=username)
-        return PostSerializer.get_user_stats(user)
         
 class DeleteSerializer(serializers.Serializer):
     id = serializers.IntegerField()

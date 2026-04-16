@@ -8,7 +8,6 @@ router.register('comment', CommentViewSet, basename='comment')
 urlpatterns = [
     path('', include(router.urls)),
 
-    # ✅ nested route (NEW)
     path('comment/post/<int:post_id>/', CommentViewSet.as_view({
         'get': 'list',
         'post': 'create'

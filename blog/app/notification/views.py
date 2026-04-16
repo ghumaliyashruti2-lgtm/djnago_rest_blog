@@ -1,6 +1,5 @@
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
-from rest_framework import permissions
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from app.notification.models import Notification
@@ -10,6 +9,7 @@ from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import UpdateModelMixin
 from rest_framework.mixins import DestroyModelMixin
 from app.permission import IsOwnerOrReadOnly
+from app.pagination import NumPagination
 # ======================
 # CREATE NOTIFICATION (helper)
 # ======================
@@ -60,7 +60,7 @@ class NotificationListView(ListAPIView):
 
     serializer_class = NotificationSerializer
     permission_classes = [IsAuthenticated,IsOwnerOrReadOnly]
-    
+    pagination_class = NumPagination
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['type', 'is_read', 'sender']
     
