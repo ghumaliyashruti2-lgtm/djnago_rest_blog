@@ -45,7 +45,7 @@ SWAGGER_SETTINGS = {
 }
 
 
-AUTH_USER_MODEL = 'user.User'
+AUTH_USER_MODEL = 'users.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -81,14 +81,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
-    'app.user',
-    'app.post',
-    'app.comment',
-    'app.notification',
-    'app.like',
-    'app.follow',
+    'apps.users',
+    'apps.posts',
+    'apps.comments',
+    'apps.notifications',
+    'apps.likes',
+    'apps.follows',
     'django_filters',
-    'app.rating',
+    'apps.ratings',
     'drf_yasg'
 ]
 
