@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404
 from apps.posts.models import Post
 from apps.follows.models import Follow
 from apps.ratings.models import Rating
+from apps.notifications.views import NotificationType, create_notification
 
 class RatingSerializer(serializers.ModelSerializer):
     class Meta:
@@ -26,7 +27,7 @@ class RatingSerializer(serializers.ModelSerializer):
         rating_value = self.validated_data.get('rating')
         
         if post.user != user:
-            if post.users.is_private:
+            if post.user.is_private:
                 is_following = Follow.objects.filter(
                     follower=user,
                     following=post.user
@@ -41,5 +42,14 @@ class RatingSerializer(serializers.ModelSerializer):
             post=post,
             defaults={"rating": rating_value}
         )
+        
+        if post.user != user:
+            create_notification(
+                user=post.user,
+                sender=user,
+                type=NotificationType.RATING
+            )
 
         return rating_obj
+    
+    

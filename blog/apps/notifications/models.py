@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 from django.conf import settings
 from apps.posts.models import Post
+from apps.ratings.models import Rating
 from apps.comments.models import Comment
 
 class Notification(models.Model):
@@ -36,6 +37,13 @@ class Notification(models.Model):
 
     comment = models.ForeignKey(
         Comment,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True
+    )
+    
+    rating = models.ForeignKey(
+        Rating,
         on_delete=models.CASCADE,
         null=True,
         blank=True

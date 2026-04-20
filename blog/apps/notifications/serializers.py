@@ -25,6 +25,9 @@ class NotificationSerializer(serializers.ModelSerializer):
         
         elif obj.type == "follow":
             return f"{sender_name} started following you"
+        
+        elif obj.type == "rating":
+            return f"{sender_name} rate on your post"
 
         return "New notification"
     

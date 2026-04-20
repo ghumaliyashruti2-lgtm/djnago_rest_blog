@@ -13,7 +13,7 @@ from blog.pagination import NumPagination
 # ======================
 # CREATE NOTIFICATION (helper)
 # ======================
-def create_notification(user, sender, type, post=None, comment=None):
+def create_notification(user, sender, type, post=None, comment=None, rating =None):
 
     # duplicate notification handle 
     exists = Notification.objects.filter(
@@ -21,6 +21,7 @@ def create_notification(user, sender, type, post=None, comment=None):
         sender=sender,
         type=type,   
         post=post,
+        rating = rating,
         comment=comment
     ).exists()
 
@@ -35,6 +36,8 @@ def create_notification(user, sender, type, post=None, comment=None):
         message = f"{sender.username} replied to your comment"
     elif type == NotificationType.FOLLOW:
         message = f"{sender.username} started following you"
+    elif type == NotificationType.RATING:
+        message = f"{sender.username} rate on your comment"
     else:
         message = ""
 
@@ -44,6 +47,7 @@ def create_notification(user, sender, type, post=None, comment=None):
         type=type,
         post=post,
         comment=comment,
+        rating=rating,
         message=message  
     )
 class NotificationType:
@@ -51,6 +55,7 @@ class NotificationType:
     COMMENT = "comment"
     REPLY = "reply"
     FOLLOW = "follow"
+    RATING = "rating"
 
 
 # ======================
