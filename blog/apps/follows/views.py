@@ -16,7 +16,7 @@ from blog.pagination import NumPagination
 User = get_user_model()
 
 
-class ToggleFollowView(CreateModelMixin, DestroyModelMixin, GenericAPIView):
+class ToggleFollowView(GenericAPIView):
 
     serializer_class = FollowSerializer
     permission_classes = [IsAuthenticated,IsOwnerOrReadOnly]

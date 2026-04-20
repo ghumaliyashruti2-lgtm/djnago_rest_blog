@@ -4,10 +4,9 @@ from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from apps.notifications.models import Notification
 from apps.notifications.serializers import DeleteNotificationSerializer, MarkNotificationReadSerializer, NotificationSerializer, UnreadCountSerializer
-from rest_framework.generics import ListAPIView
 from rest_framework.generics import GenericAPIView
-from rest_framework.mixins import UpdateModelMixin
-from rest_framework.mixins import DestroyModelMixin
+from rest_framework.mixins import ListModelMixin
+from rest_framework.filters import SearchFilter
 from blog.permission import IsOwnerOrReadOnly
 from blog.pagination import NumPagination
 # ======================
@@ -61,25 +60,28 @@ class NotificationType:
 # ======================
 # GET NOTIFICATIONS
 # ======================
-class NotificationListView(ListAPIView):
 
+class NotificationListView(GenericAPIView, ListModelMixin):
     serializer_class = NotificationSerializer
-    permission_classes = [IsAuthenticated,IsOwnerOrReadOnly]
+    permission_classes = [IsAuthenticated]
     pagination_class = NumPagination
-    filter_backends = [DjangoFilterBackend]
+
+    filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_fields = ['type', 'is_read', 'sender']
-    
     search_fields = ['message']
 
     def get_queryset(self):
         return Notification.objects.filter(
             user=self.request.user
         ).order_by("-created_at")
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
         
 # ======================
 # MARK AS READ
 # ======================
-class NotificationMarkReadView(UpdateModelMixin, GenericAPIView):
+class NotificationMarkReadView( GenericAPIView):
 
     permission_classes = [IsAuthenticated,IsOwnerOrReadOnly]
     queryset = Notification.objects.all()
@@ -101,7 +103,7 @@ class NotificationMarkReadView(UpdateModelMixin, GenericAPIView):
 # ======================
 # DELETE NOTIFICATION
 # ======================
-class NotificationDeleteView(DestroyModelMixin, GenericAPIView):
+class NotificationDeleteView( GenericAPIView):
 
     permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
     serializer_class = DeleteNotificationSerializer
