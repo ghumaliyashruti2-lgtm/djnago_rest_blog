@@ -16,6 +16,9 @@ from apps.comments.serializers import (
 from apps.notifications.views import create_notification
 from blog.permission import IsOwnerOrReadOnly
 from blog.pagination import NumPagination
+import logging
+
+logger = logging.getLogger(__name__)
 
 class CommentViewSet(ModelViewSet):
 
@@ -37,8 +40,11 @@ class CommentViewSet(ModelViewSet):
         post_id = self.kwargs.get("post_id")
         if post_id:
             queryset = queryset.filter(post_id=post_id)
+            
+        if self.action == "list":
+            return queryset.filter(parent__isnull=True)
 
-        return queryset.filter(parent__isnull=True)
+        return queryset
 
     #  Dynamic serializer
     def get_serializer_class(self):
@@ -55,20 +61,23 @@ class CommentViewSet(ModelViewSet):
     # ======================
     def perform_create(self, serializer):
         post = get_object_or_404(Post, id=self.kwargs.get("post_id"))
-        serializer.save(post=post, user=self.request.user)
+        logger.debug(f"user {self.request.user} trying to comment on post {post}")
+        comment = serializer.save(post=post, user=self.request.user)
+        logger.info(f"Comment created: user={self.request.user}, post={post}, comment_id={comment.id}")
         
     # ======================
     # REPLY COMMENT
     # ======================
     @action(detail=False, methods=["POST"])
     def reply(self, request):
+        logger.debug(f"User {request.user.username} is attempting to reply")
         serializer = self.get_serializer(
             data=request.data,
             context={"request": request}
         )
         serializer.is_valid(raise_exception=True)
         comment = serializer.save()
-
+        logger.info(f"Reply created by user={request.user.username} on comment_id={comment.id}")
         return Response({
             "message": "Reply added",
             "comment_id": comment.id
@@ -79,19 +88,35 @@ class CommentViewSet(ModelViewSet):
     # ======================
     def update(self, request, *args, **kwargs):
         return super().update(request, *args, **kwargs)
-        
-
+    
     # ======================
     # DELETE COMMENT
     # ======================
     def destroy(self, request, *args, **kwargs):
+        logger.debug(f"User {request.user} try to delete comment {self.comment.id}")
         super().destroy(request, *args, **kwargs)
+        logger.info(f"User {request.user} successfully delete comment {self.comment.id}")
         return Response({"msg": "Comment deleted"})
+    
+    # ==========================
+    # GET USER PROFILE 
+    # ==========================
 
-    @action(detail=True, methods=["GET"], permission_classes=[IsAuthenticated], url_path="user/profile")
+    @action(detail=True, methods=["GET"], permission_classes=[IsAuthenticated], url_path="users/profile")
     def user_profile(self, request, pk=None):
-        comment = self.get_object()
+        logger.debug(f"user {request.user} is requesting to show proifle owner of comment id ={pk}")
+        
+        try:
+            comment = self.get_object()
+        except Exception as e:
+            logger.error(f"Comment not found: id={pk}, error={str(e)}")
+            raise
+        
         user = comment.user
+        
+        logger.info(
+            f"user {request.user} fetched profile {user} owner of comment_id={comment.id}"
+        )
 
         serializer = ProfileSerializer(user)
         return Response(serializer.data)

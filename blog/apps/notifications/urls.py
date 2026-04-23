@@ -5,10 +5,10 @@ from apps.notifications.views import (NotificationListView,
     UnreadCountView)
 
 urlpatterns = [
-    path("notification/", NotificationListView.as_view()),
-    path("notification/<int:pk>/read/", NotificationMarkReadView.as_view()),
-    path("notification/<int:pk>/delete/", NotificationDeleteView.as_view()),
-    path("notification/unread-count/", UnreadCountView.as_view()),
+    path("notifications/", NotificationListView.as_view()),
+    path("notifications/<int:pk>/read/", NotificationMarkReadView.as_view()),
+    path("notifications/<int:pk>/", NotificationDeleteView.as_view()),
+    path("notifications/unread-count/", UnreadCountView.as_view()),
 ]
 
 ''' full url = notification/notifications/1/read/ | delete/

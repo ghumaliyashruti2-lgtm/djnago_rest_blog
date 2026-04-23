@@ -7,7 +7,7 @@ from django.core.mail import send_mail
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import get_user_model
 from django_filters.rest_framework import DjangoFilterBackend
-from apps.users.serializers import DeleteAccountSerializer, DeleteProfilePicSerializer, ForgotPasswordSerializer, LogoutSerializer, ProfilePicSerializer, ProfileSerializer, RefreshTokenSerializer, RegisterSerializer, LoginSerializer, ResendOTPSerializer, ResetPasswordSerializer, UserProfileSerializer, VerifyOTPSerializer
+from apps.users.serializers import DeleteAccountSerializer, DeleteProfilePicSerializer, ForgotPasswordSerializer, LogoutSerializer, ProfilePicSerializer, ProfileSerializer, RefreshTokenSerializer, RegisterSerializer, LoginSerializer, ResendOTPSerializer, ResetPasswordSerializer, UserProfileSerializer, VerifyOTPSerializer, VerifyResetOTPSerializer
 from apps.users.models import OTP
 from rest_framework.parsers import MultiPartParser, FormParser
 import random
@@ -42,7 +42,7 @@ class AuthViewSet(ViewSet):
     @action(detail=False, methods=["post"])
     def register(self, request):
         
-        serializer = RegisterSerializer(data=request.data)
+        serializer = RegisterSerializer(data=request.data, context={"request": request})
         if serializer.is_valid():
             user = serializer.save()
 
@@ -171,7 +171,7 @@ class AuthViewSet(ViewSet):
     @action(detail=False, methods=["post"])
     def verify_reset_otp(self, request):
         
-        serializer = VerifyOTPSerializer(
+        serializer = VerifyResetOTPSerializer(
             data=request.data,
             context={"request":request}
         )
@@ -193,7 +193,7 @@ class AuthViewSet(ViewSet):
     @action(detail=False, methods=["post"])
     def reset_password(self, request):
         
-        serializer = RefreshTokenSerializer(
+        serializer = ResetPasswordSerializer(
             data=request.data,
             context={"request":request}
         )

@@ -12,7 +12,8 @@ from apps.follows.models import Follow
 from apps.follows.serializers import FollowSerializer, FollowStatusSerializer, MyFollowerSerializer, MyFollowingSerializer
 from drf_yasg.utils import swagger_auto_schema
 from blog.pagination import NumPagination
-
+import logging
+logger = logging.getLogger(__name__)
 User = get_user_model()
 
 
@@ -35,7 +36,6 @@ class ToggleFollowView(GenericAPIView):
 
     def post(self, request, user_id):
        following = get_object_or_404(User, id=user_id)
-
        serializer = FollowSerializer(
            data={},
            context={
@@ -46,7 +46,6 @@ class ToggleFollowView(GenericAPIView):
        
        serializer.is_valid(raise_exception=True)
        data = serializer.save()
-       
        return Response(data)
    
 class FollowStatusView(GenericAPIView):
@@ -71,6 +70,7 @@ class FollowStatusView(GenericAPIView):
            instance=user,
            context={"request":request}
        )
+       
        return Response(serializer.data)
     
 class MyFollowersView(ListAPIView):
@@ -87,6 +87,7 @@ class MyFollowersView(ListAPIView):
     )
 
     def get_queryset(self):
+        logger.debug(f"user {self.request.user} request to show follower list")
         return Follow.objects.filter(
             following=self.request.user
         ).select_related("follower", "following")
@@ -107,9 +108,11 @@ class MyFollowingView(ListAPIView):
     )
     
     def get_queryset(self):
+        logger.debug(f"user {self.request.user} request to show following list")
         return Follow.objects.filter(
             follower=self.request.user
         ).select_related("follower", "following")
+        
         
 
         

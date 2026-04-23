@@ -10,6 +10,9 @@ from apps.likes.models import Like
 from apps.posts.models import Post
 from apps.comments.models import Comment
 from apps.users.models import OTP
+import logging
+import blog.logs
+logger = logging.getLogger(__name__)
 
 User = get_user_model()
 def generate_otp():
@@ -31,15 +34,18 @@ class RegisterSerializer(serializers.ModelSerializer):
             email=validated_data["email"],
             password=validated_data["password"]
         )
+        logger.info(f"user {user.username} successfully register")
         return user
     
     def validate_email(self, value):
         if User.objects.filter(email=value).exists():
+            logger.error(f"register email {value} is already exists")
             raise serializers.ValidationError("Email already exists")
         return value
 
     def validate_username(self, value):
         if User.objects.filter(username=value).exists():
+            logger.error(f"username {value} alreday exists")
             raise serializers.ValidationError("Username already exists")
         return value
 
@@ -50,33 +56,35 @@ class RegisterSerializer(serializers.ModelSerializer):
 class VerifyOTPSerializer(serializers.Serializer):
     email = serializers.EmailField()
     otp = serializers.CharField()
-
+   
     def validate(self, data):
         email = data.get("email")
+        logger.debug(f"OTP verification started for {email}")
         otp = data.get("otp")
         
         user = User.objects.filter(email=email).first()
 
         if not user:
+            logger.error(f"User not found for email: {email}")
             raise serializers.ValidationError({"error": "User not found"})
 
         otp_obj = OTP.objects.filter(email=email).order_by("-created_at").first()
 
         
-        print("INPUT OTP:", otp)
-        print("DB OTPs:", list(OTP.objects.filter(email=email).values_list("otp", flat=True)))
-        
         
         if not otp_obj:
+            logger.error(f"No OTP found for {email}")
             raise serializers.ValidationError({"error": "No OTP found"})
 
-        # compare manually
         if otp_obj.otp != otp:
+            logger.error(f"Invalid OTP entered for {email}")
             raise serializers.ValidationError({"error": "Invalid OTP"})
 
-        # expiry check
         if otp_obj.is_expired():
+            logger.error(f"Invalid OTP entered for {email}")
             raise serializers.ValidationError({"error": "OTP expired"})
+        
+        logger.info(f"OTP verified successfully for {email}")
         
         OTP.objects.filter(email=email).exclude(id=otp_obj.id).delete()
         
@@ -106,9 +114,11 @@ class ResendOTPSerializer(serializers.Serializer):
         last_otp = OTP.objects.filter(email=email).order_by("-created_at").first()
 
         if not user:
+            logger.error(f"user not found for this user {user}")
             raise serializers.ValidationError({"error": "User not found"})
 
         if last_otp and not last_otp.is_expired():
+            logger.error(f"user {user.username} try to generate new otp before time limit")
             raise serializers.ValidationError("Wait before requesting new OTP")
         self.user = user
         return data
@@ -121,6 +131,8 @@ class ResendOTPSerializer(serializers.Serializer):
             email=self.user.email,
             otp=otp
         )
+
+        logger.info(f"OTP resent to {self.user.email}")
 
         send_mail(
             "Your OTP",
@@ -140,18 +152,21 @@ class LoginSerializer(serializers.Serializer):
     password = serializers.CharField()
 
     def validate(self, data):
-
+        username = data["username"]
         user = authenticate(
-            username=data["username"],
+            username=username,
             password=data["password"]
         )
 
         if not user:
+            logger.error(f"Failed login attempt for username: {username}")
             raise serializers.ValidationError("Invalid credentials")
 
         if not user.is_verified:
+            logger.error(f"Unverified user tried login: {username}")
             raise serializers.ValidationError("Email not verified")
 
+        logger.info(f"user successfully loggin {username}")
         data["user"] = user
         return data
 
@@ -199,10 +214,10 @@ class ForgotPasswordSerializer(serializers.Serializer):
             "Reset Password OTP",
             f"Your OTP is {otp}",
             "noreply@gmail.com",
-            [self.users.email],
+            [self.user.email],
             fail_silently=True,
         )
-
+        logger.info(f"user {user.username} attempt forgot password")
         return user
 
 # ======================
@@ -220,26 +235,32 @@ class VerifyResetOTPSerializer(serializers.Serializer):
         user = User.objects.filter(email=email).first()
         
         if not user:
+            logger.error(f"User not found for email: {email}")
             raise serializers.ValidationError({"error": "User not found"})
-        
+
         otp_obj = OTP.objects.filter(email=email).order_by("-created_at").first()
 
         if not otp_obj:
+            logger.error(f"No OTP found for {email}")
             raise serializers.ValidationError({"error": "No OTP found"})
 
+        # compare manually
         if otp_obj.otp != otp:
+            logger.error(f"Invalid OTP entered for {email}")
             raise serializers.ValidationError({"error": "Invalid OTP"})
 
+        # expiry check
         if otp_obj.is_expired():
+            logger.error(f"Invalid OTP entered for {email}")
             raise serializers.ValidationError({"error": "OTP expired"})
+        
+        logger.info(f"OTP verified successfully for {email}")
 
         self.context["user"]=user
         return data
     
     def save(self, **kwargs):
         user = self.context["user"]
-
-        user.is_verified = True
         user.otp = None
         user.save()
 
@@ -261,6 +282,7 @@ class ResetPasswordSerializer(serializers.Serializer):
         user = User.objects.filter(email=email).first()
 
         if not user:
+            logger.error(f"{user} not found")
             raise serializers.ValidationError({"error": "User not found"})
 
         self.user = user
@@ -268,30 +290,33 @@ class ResetPasswordSerializer(serializers.Serializer):
     
     def save(self, **kwargs):
         password = self.validated_data.get("password")
-        self.users.password = make_password(password)
-        self.users.save()
+        self.user.password = make_password(password)
+        logger.info(f"user {self.user.username} successfully reset password ")
+        self.user.save()
  
  
 # ======================
 # REFRESH TOKEN
 # ======================
 class RefreshTokenSerializer(serializers.Serializer):
-    
+    refresh = serializers.CharField()
     def validate(self, data):
         refresh_token = data.get("refresh")
         
         if not refresh_token:
+            logger.error(f"user {self.user.username} attempt refresh token is required")
             raise serializers.ValidationError({"error": "Refresh token required"}, status=400)
 
         try:
             token = RefreshToken(refresh_token)
             access_token = token.access_token
-
+            logger.info(f"user successfully refresh token")
             return ({
                 "access": str(access_token)
             })
 
         except TokenError:
+            logger.error(f"{self.user.username} token is expired or invalid")
             raise serializers.ValidationError({"error": "Invalid or expired refresh token"}, status=400)
 
         
@@ -304,20 +329,23 @@ class LogoutSerializer(serializers.Serializer):
     refresh = serializers.CharField()
     
     def validate(self, data):
-        
         refresh_token = data.get("refresh")
         
         if not refresh_token:
-            raise serializers.ValidationError({"Refresh Token Required"})
+            logger.error(f"user {self.user.username} for logout refresh token is required")
+            raise serializers.ValidationError({"error":"Refresh Token Required"})
 
         self.refresh_token = refresh_token
         return data
     
     def save(self, **kwargs):
+        user = self.context["request"].user
         try:
             token=RefreshToken(self.refresh_token)
+            logger.info(f"user {user.username} successfully logout")
             token.blacklist()
         except Exception:
+            logger.error(f"user {user.username} enter invalide token for forgotpassword")
             raise serializers.ValidationError({"Invalid Token"})
 
 # ======================
@@ -333,6 +361,7 @@ class DeleteAccountSerializer(serializers.Serializer):
         password = data.get("password")
 
         if not user.check_password(password):
+            logger.error(f"user {user.username} enter wrong password in delete account")
             raise serializers.ValidationError({
                 "password": "Incorrect password"
             })
@@ -341,7 +370,10 @@ class DeleteAccountSerializer(serializers.Serializer):
     
     def save(self, **kwargs):
         user = self.context["request"].user
+        del_user = user
+        logger.warning(f"User deleted account: {user.email}")
         user.delete()
+        logger.info(f"user {del_user.username} successfully delete own account")
         return {"message": "Account deleted successfully"}
 
 # ======================
@@ -399,7 +431,7 @@ class UserProfileSerializer(serializers.Serializer):
     def to_representation(self,user):
         request = self.context.get("request")
         
-        if request and request.users.is_authenticated:
+        if request and request.user.is_authenticated:
             is_following = Follow.objects.filter(
             follower=request.user,
             following=user

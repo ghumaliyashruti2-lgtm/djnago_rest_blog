@@ -3,7 +3,7 @@ from apps.posts.views import PostViewSet
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register('post', PostViewSet, basename='post')
+router.register('posts', PostViewSet, basename='posts')
 
 urlpatterns = [
     path('', include(router.urls)),
