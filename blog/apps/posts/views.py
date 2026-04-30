@@ -10,6 +10,7 @@ from rest_framework.decorators import action
 from drf_yasg.utils import swagger_auto_schema
 from django_filters import rest_framework as filter
 from rest_framework.filters import SearchFilter, OrderingFilter
+from apps.posts.bg_tasks import generate_summary
 from blog.permission import IsOwnerOrReadOnly
 from blog.pagination import NumPagination
 from rest_framework import status
@@ -49,7 +50,13 @@ class PostViewSet(ModelViewSet):
         return super().list(request, *args, **kwargs)
         
     def create(self, request, *args, **kwargs):
-        return super().create(request, *args, **kwargs)
+        response = super().create(request, *args, **kwargs)
+    
+        post_id = response.data.get("id")
+
+        generate_summary.delay(post_id)   
+
+        return response
 
     def update(self, request, *args, **kwargs):
         return super().update(request, *args, **kwargs)
@@ -87,7 +94,7 @@ class PostViewSet(ModelViewSet):
         return super().list(request, *args, **kwargs)
 
 
-    @action(detail=True, methods=['get'], url_path='user')
+    @action(detail=True, methods=['get'], url_path='users')
     def get_post_owner(self, request, pk=None):
         post = self.get_object()
         logger.debug(

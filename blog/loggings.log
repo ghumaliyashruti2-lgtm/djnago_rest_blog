@@ -1,579 +1,299 @@
-DEBUG 2026-04-23 12:08:21,454 serializers Fetching posts: user_id=None, username=None serializers.py
-DEBUG 2026-04-23 12:08:21,468 serializers Fetching feed for user 1 serializers.py
-DEBUG 2026-04-23 12:08:21,475 serializers Posts fetched successfully serializers.py
-INFO 2026-04-23 12:09:13,901 autoreload C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py changed, reloading. autoreload.py
-DEBUG 2026-04-23 12:09:57,465 serializers Fetching replies from user shruti for comment id=1, count=1 serializers.py
-DEBUG 2026-04-23 12:09:57,469 serializers Fetching replies from user shruti for comment id=4, count=0 serializers.py
-WARNING 2026-04-23 12:14:55,732 log Unauthorized: /api/users/register/ log.py
-INFO 2026-04-23 12:15:10,861 serializers user riya successfully register serializers.py
-DEBUG 2026-04-23 12:15:44,847 serializers OTP verification started for shrutighumaliyaofficial@gmail.com serializers.py
-INFO 2026-04-23 12:15:44,916 serializers OTP verified successfully for shrutighumaliyaofficial@gmail.com serializers.py
-INFO 2026-04-23 12:16:07,949 serializers user successfully loggin riya serializers.py
-DEBUG 2026-04-23 12:17:09,968 serializers Fetching posts: user_id=None, username=None serializers.py
-DEBUG 2026-04-23 12:17:09,968 serializers Fetching feed for user 5 serializers.py
-DEBUG 2026-04-23 12:17:09,970 serializers Posts fetched successfully serializers.py
-INFO 2026-04-23 12:18:17,489 autoreload C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\logs.py changed, reloading. autoreload.py
-autoreload.py INFO 2026-04-23 12:18:49,116 autoreload C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\logs.py changed, reloading. 
-INFO 2026-04-23 12:20:58,362 autoreload.py autoreload C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\logs.py changed, reloading. 
-DEBUG 2026-04-23 12:22:35,668 views.py views user riya request to show follower list 
-INFO 2026-04-23 12:24:47,618 autoreload.py autoreload C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\logs.py changed, reloading. 
-DEBUG 2026-04-23 12:25:00,240 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py serializers.py serializers 29 Fetching replies from user riya for comment id=1, count=1 
-DEBUG 2026-04-23 12:25:00,243 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py serializers.py serializers 29 Fetching replies from user riya for comment id=4, count=0 
-INFO 2026-04-23 12:26:02,201 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py autoreload.py autoreload 265 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\logs.py changed, reloading. 
-INFO 2026-04-23 12:26:51,785 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py 265 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\logs.py changed, reloading. 
-DEBUG 2026-04-23 12:26:54,808 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:29]  Fetching replies from user riya for comment id=1, count=1 
-DEBUG 2026-04-23 12:26:54,812 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:29]  Fetching replies from user riya for comment id=4, count=0 
-INFO 2026-04-23 12:27:41,954 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-DEBUG 2026-04-23 12:28:43,789 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing AvifImagePlugin 
-DEBUG 2026-04-23 12:28:43,988 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing BlpImagePlugin 
-DEBUG 2026-04-23 12:28:43,991 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing BmpImagePlugin 
-DEBUG 2026-04-23 12:28:43,992 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing BufrStubImagePlugin 
-DEBUG 2026-04-23 12:28:43,994 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing CurImagePlugin 
-DEBUG 2026-04-23 12:28:43,997 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing DcxImagePlugin 
-DEBUG 2026-04-23 12:28:44,002 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing DdsImagePlugin 
-DEBUG 2026-04-23 12:28:44,016 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing EpsImagePlugin 
-DEBUG 2026-04-23 12:28:44,019 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FitsImagePlugin 
-DEBUG 2026-04-23 12:28:44,022 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FliImagePlugin 
-DEBUG 2026-04-23 12:28:44,024 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FpxImagePlugin 
-DEBUG 2026-04-23 12:28:44,028 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:391]  Image: failed to import FpxImagePlugin: No module named 'olefile' 
-DEBUG 2026-04-23 12:28:44,028 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FtexImagePlugin 
-DEBUG 2026-04-23 12:28:44,031 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing GbrImagePlugin 
-DEBUG 2026-04-23 12:28:44,033 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing GifImagePlugin 
-DEBUG 2026-04-23 12:28:44,034 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing GribStubImagePlugin 
-DEBUG 2026-04-23 12:28:44,036 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing Hdf5StubImagePlugin 
-DEBUG 2026-04-23 12:28:44,038 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing IcnsImagePlugin 
-DEBUG 2026-04-23 12:28:44,045 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing IcoImagePlugin 
-DEBUG 2026-04-23 12:28:44,048 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing ImImagePlugin 
-DEBUG 2026-04-23 12:28:44,051 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing ImtImagePlugin 
-DEBUG 2026-04-23 12:28:44,054 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing IptcImagePlugin 
-DEBUG 2026-04-23 12:28:44,056 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing JpegImagePlugin 
-DEBUG 2026-04-23 12:28:44,056 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing Jpeg2KImagePlugin 
-DEBUG 2026-04-23 12:28:44,056 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing McIdasImagePlugin 
-DEBUG 2026-04-23 12:28:44,059 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MicImagePlugin 
-DEBUG 2026-04-23 12:28:44,064 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:391]  Image: failed to import MicImagePlugin: No module named 'olefile' 
-DEBUG 2026-04-23 12:28:44,064 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MpegImagePlugin 
-DEBUG 2026-04-23 12:28:44,068 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MpoImagePlugin 
-DEBUG 2026-04-23 12:28:44,070 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MspImagePlugin 
-DEBUG 2026-04-23 12:28:44,073 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PalmImagePlugin 
-DEBUG 2026-04-23 12:28:44,081 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PcdImagePlugin 
-DEBUG 2026-04-23 12:28:44,083 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PcxImagePlugin 
-DEBUG 2026-04-23 12:28:44,083 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PdfImagePlugin 
-DEBUG 2026-04-23 12:28:44,095 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PixarImagePlugin 
-DEBUG 2026-04-23 12:28:44,098 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PngImagePlugin 
-DEBUG 2026-04-23 12:28:44,098 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PpmImagePlugin 
-DEBUG 2026-04-23 12:28:44,098 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PsdImagePlugin 
-DEBUG 2026-04-23 12:28:44,101 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing QoiImagePlugin 
-DEBUG 2026-04-23 12:28:44,103 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing SgiImagePlugin 
-DEBUG 2026-04-23 12:28:44,107 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing SpiderImagePlugin 
-DEBUG 2026-04-23 12:28:44,109 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing SunImagePlugin 
-DEBUG 2026-04-23 12:28:44,112 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing TgaImagePlugin 
-DEBUG 2026-04-23 12:28:44,115 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing TiffImagePlugin 
-DEBUG 2026-04-23 12:28:44,115 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing WebPImagePlugin 
-DEBUG 2026-04-23 12:28:44,207 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing WmfImagePlugin 
-DEBUG 2026-04-23 12:28:44,209 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing XbmImagePlugin 
-DEBUG 2026-04-23 12:28:44,213 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing XpmImagePlugin 
-DEBUG 2026-04-23 12:28:44,216 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing XVThumbImagePlugin 
-INFO 2026-04-23 12:28:44,239 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:66]  post_id=8 is created by user=riya  
-INFO 2026-04-23 12:35:06,007 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-INFO 2026-04-23 12:38:02,837 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-INFO 2026-04-23 12:39:39,531 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-INFO 2026-04-23 12:40:24,931 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-INFO 2026-04-23 12:54:45,663 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-DEBUG 2026-04-23 12:55:51,115 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing AvifImagePlugin 
-DEBUG 2026-04-23 12:55:51,224 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing BlpImagePlugin 
-DEBUG 2026-04-23 12:55:51,236 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing BmpImagePlugin 
-DEBUG 2026-04-23 12:55:51,241 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing BufrStubImagePlugin 
-DEBUG 2026-04-23 12:55:51,244 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing CurImagePlugin 
-DEBUG 2026-04-23 12:55:51,249 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing DcxImagePlugin 
-DEBUG 2026-04-23 12:55:51,261 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing DdsImagePlugin 
-DEBUG 2026-04-23 12:55:51,273 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing EpsImagePlugin 
-DEBUG 2026-04-23 12:55:51,275 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FitsImagePlugin 
-DEBUG 2026-04-23 12:55:51,277 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FliImagePlugin 
-DEBUG 2026-04-23 12:55:51,279 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FpxImagePlugin 
-DEBUG 2026-04-23 12:55:51,285 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:391]  Image: failed to import FpxImagePlugin: No module named 'olefile' 
-DEBUG 2026-04-23 12:55:51,287 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FtexImagePlugin 
-DEBUG 2026-04-23 12:55:51,290 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing GbrImagePlugin 
-DEBUG 2026-04-23 12:55:51,292 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing GifImagePlugin 
-DEBUG 2026-04-23 12:55:51,292 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing GribStubImagePlugin 
-DEBUG 2026-04-23 12:55:51,294 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing Hdf5StubImagePlugin 
-DEBUG 2026-04-23 12:55:51,298 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing IcnsImagePlugin 
-DEBUG 2026-04-23 12:55:51,305 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing IcoImagePlugin 
-DEBUG 2026-04-23 12:55:51,307 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing ImImagePlugin 
-DEBUG 2026-04-23 12:55:51,310 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing ImtImagePlugin 
-DEBUG 2026-04-23 12:55:51,312 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing IptcImagePlugin 
-DEBUG 2026-04-23 12:55:51,318 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing JpegImagePlugin 
-DEBUG 2026-04-23 12:55:51,319 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing Jpeg2KImagePlugin 
-DEBUG 2026-04-23 12:55:51,319 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing McIdasImagePlugin 
-DEBUG 2026-04-23 12:55:51,322 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MicImagePlugin 
-DEBUG 2026-04-23 12:55:51,326 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:391]  Image: failed to import MicImagePlugin: No module named 'olefile' 
-DEBUG 2026-04-23 12:55:51,326 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MpegImagePlugin 
-DEBUG 2026-04-23 12:55:51,335 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MpoImagePlugin 
-DEBUG 2026-04-23 12:55:51,340 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MspImagePlugin 
-DEBUG 2026-04-23 12:55:51,343 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PalmImagePlugin 
-DEBUG 2026-04-23 12:55:51,351 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PcdImagePlugin 
-DEBUG 2026-04-23 12:55:51,357 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PcxImagePlugin 
-DEBUG 2026-04-23 12:55:51,357 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PdfImagePlugin 
-DEBUG 2026-04-23 12:55:51,379 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PixarImagePlugin 
-DEBUG 2026-04-23 12:55:51,388 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PngImagePlugin 
-DEBUG 2026-04-23 12:55:51,391 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PpmImagePlugin 
-DEBUG 2026-04-23 12:55:51,392 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PsdImagePlugin 
-DEBUG 2026-04-23 12:55:51,396 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing QoiImagePlugin 
-DEBUG 2026-04-23 12:55:51,407 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing SgiImagePlugin 
-DEBUG 2026-04-23 12:55:51,416 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing SpiderImagePlugin 
-DEBUG 2026-04-23 12:55:51,423 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing SunImagePlugin 
-DEBUG 2026-04-23 12:55:51,429 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing TgaImagePlugin 
-DEBUG 2026-04-23 12:55:51,436 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing TiffImagePlugin 
-DEBUG 2026-04-23 12:55:51,439 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing WebPImagePlugin 
-DEBUG 2026-04-23 12:55:51,525 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing WmfImagePlugin 
-DEBUG 2026-04-23 12:55:51,528 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing XbmImagePlugin 
-DEBUG 2026-04-23 12:55:51,542 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing XpmImagePlugin 
-DEBUG 2026-04-23 12:55:51,545 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing XVThumbImagePlugin 
-INFO 2026-04-23 12:55:51,573 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:66]  post_id=9 is created by user=riya  
-WARNING 2026-04-23 12:59:07,540 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Unauthorized: /api/posts/ 
-WARNING 2026-04-23 12:59:52,997 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Unauthorized: /api/users/refresh_token/ 
-WARNING 2026-04-23 12:59:56,209 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Unauthorized: /api/users/refresh_token/ 
-WARNING 2026-04-23 13:00:20,791 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Unauthorized: /api/users/delete_account/ 
-WARNING 2026-04-23 13:00:27,943 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Unauthorized: /api/users/delete_account/ 
-WARNING 2026-04-23 13:00:33,826 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Unauthorized: /api/users/delete_account/ 
-WARNING 2026-04-23 13:00:46,723 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Unauthorized: /api/users/delete_account/ 
-WARNING 2026-04-23 13:01:29,187 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Unauthorized: /api/posts/ 
-WARNING 2026-04-23 13:02:15,234 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Method Not Allowed: /api/posts/4/ 
-INFO 2026-04-23 14:04:17,523 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-INFO 2026-04-23 14:08:01,557 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-INFO 2026-04-23 14:09:21,705 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-INFO 2026-04-23 14:10:12,099 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-INFO 2026-04-23 14:10:20,734 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-WARNING 2026-04-23 14:11:44,687 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Not Found: /users/user_list/ 
-WARNING 2026-04-23 14:11:51,787 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Unauthorized: /api/users/user_list/ 
-WARNING 2026-04-23 14:13:34,703 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Bad Request: /api/users/register/ 
-INFO 2026-04-23 14:13:43,108 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:37]  user shruti successfully register 
-DEBUG 2026-04-23 14:14:25,828 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:62]  OTP verification started for ghumaliyashruti2@gmail.com 
-INFO 2026-04-23 14:14:25,994 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:87]  OTP verified successfully for ghumaliyashruti2@gmail.com 
-INFO 2026-04-23 14:16:36,435 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:169]  user successfully loggin shruti 
-WARNING 2026-04-23 14:18:39,660 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Unauthorized: /api/posts/ 
-DEBUG 2026-04-23 14:18:46,658 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing AvifImagePlugin 
-DEBUG 2026-04-23 14:18:46,734 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing BlpImagePlugin 
-DEBUG 2026-04-23 14:18:46,738 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing BmpImagePlugin 
-DEBUG 2026-04-23 14:18:46,739 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing BufrStubImagePlugin 
-DEBUG 2026-04-23 14:18:46,743 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing CurImagePlugin 
-DEBUG 2026-04-23 14:18:46,747 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing DcxImagePlugin 
-DEBUG 2026-04-23 14:18:46,752 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing DdsImagePlugin 
-DEBUG 2026-04-23 14:18:46,763 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing EpsImagePlugin 
-DEBUG 2026-04-23 14:18:46,767 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FitsImagePlugin 
-DEBUG 2026-04-23 14:18:46,771 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FliImagePlugin 
-DEBUG 2026-04-23 14:18:46,776 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FpxImagePlugin 
-DEBUG 2026-04-23 14:18:46,781 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:391]  Image: failed to import FpxImagePlugin: No module named 'olefile' 
-DEBUG 2026-04-23 14:18:46,782 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FtexImagePlugin 
-DEBUG 2026-04-23 14:18:46,785 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing GbrImagePlugin 
-DEBUG 2026-04-23 14:18:46,790 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing GifImagePlugin 
-DEBUG 2026-04-23 14:18:46,790 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing GribStubImagePlugin 
-DEBUG 2026-04-23 14:18:46,794 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing Hdf5StubImagePlugin 
-DEBUG 2026-04-23 14:18:46,797 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing IcnsImagePlugin 
-DEBUG 2026-04-23 14:18:46,806 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing IcoImagePlugin 
-DEBUG 2026-04-23 14:18:46,811 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing ImImagePlugin 
-DEBUG 2026-04-23 14:18:46,814 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing ImtImagePlugin 
-DEBUG 2026-04-23 14:18:46,817 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing IptcImagePlugin 
-DEBUG 2026-04-23 14:18:46,822 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing JpegImagePlugin 
-DEBUG 2026-04-23 14:18:46,822 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing Jpeg2KImagePlugin 
-DEBUG 2026-04-23 14:18:46,823 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing McIdasImagePlugin 
-DEBUG 2026-04-23 14:18:46,826 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MicImagePlugin 
-DEBUG 2026-04-23 14:18:46,829 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:391]  Image: failed to import MicImagePlugin: No module named 'olefile' 
-DEBUG 2026-04-23 14:18:46,830 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MpegImagePlugin 
-DEBUG 2026-04-23 14:18:46,835 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MpoImagePlugin 
-DEBUG 2026-04-23 14:18:46,839 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MspImagePlugin 
-DEBUG 2026-04-23 14:18:46,842 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PalmImagePlugin 
-DEBUG 2026-04-23 14:18:46,852 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PcdImagePlugin 
-DEBUG 2026-04-23 14:18:46,855 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PcxImagePlugin 
-DEBUG 2026-04-23 14:18:46,857 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PdfImagePlugin 
-DEBUG 2026-04-23 14:18:46,874 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PixarImagePlugin 
-DEBUG 2026-04-23 14:18:46,877 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PngImagePlugin 
-DEBUG 2026-04-23 14:18:46,877 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PpmImagePlugin 
-DEBUG 2026-04-23 14:18:46,877 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PsdImagePlugin 
-DEBUG 2026-04-23 14:18:46,880 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing QoiImagePlugin 
-DEBUG 2026-04-23 14:18:46,883 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing SgiImagePlugin 
-DEBUG 2026-04-23 14:18:46,885 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing SpiderImagePlugin 
-DEBUG 2026-04-23 14:18:46,891 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing SunImagePlugin 
-DEBUG 2026-04-23 14:18:46,896 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing TgaImagePlugin 
-DEBUG 2026-04-23 14:18:46,899 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing TiffImagePlugin 
-DEBUG 2026-04-23 14:18:46,900 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing WebPImagePlugin 
-DEBUG 2026-04-23 14:18:46,948 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing WmfImagePlugin 
-DEBUG 2026-04-23 14:18:46,950 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing XbmImagePlugin 
-DEBUG 2026-04-23 14:18:46,955 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing XpmImagePlugin 
-DEBUG 2026-04-23 14:18:46,958 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing XVThumbImagePlugin 
-INFO 2026-04-23 14:18:46,979 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:66]  post_id=10 is created by user=shruti  
-INFO 2026-04-23 14:19:20,103 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:66]  post_id=11 is created by user=shruti  
-WARNING 2026-04-23 14:20:52,130 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Unauthorized: /api/users/register/ 
-INFO 2026-04-23 14:21:07,775 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:37]  user vidhi successfully register 
-DEBUG 2026-04-23 14:21:48,313 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:62]  OTP verification started for shruti.ghumaliya131359@marwadiuniversity.ac.in 
-INFO 2026-04-23 14:21:48,371 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:87]  OTP verified successfully for shruti.ghumaliya131359@marwadiuniversity.ac.in 
-INFO 2026-04-23 14:22:20,746 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:169]  user successfully loggin vidhi 
-INFO 2026-04-23 14:24:02,923 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:66]  post_id=12 is created by user=vidhi  
-INFO 2026-04-23 14:24:32,398 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:66]  post_id=13 is created by user=vidhi  
-DEBUG 2026-04-23 14:24:55,588 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:84]  Fetching posts by user vidhi 
-DEBUG 2026-04-23 14:24:55,589 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:128]  user vidhi Fetching posts of user vidhi 
-INFO 2026-04-23 14:24:55,591 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:143]  user vidhi fetched posts 
-DEBUG 2026-04-23 14:27:06,123 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:84]  Fetching posts by user vidhi 
-DEBUG 2026-04-23 14:27:06,123 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:128]  user vidhi Fetching posts of user vidhi 
-INFO 2026-04-23 14:27:06,124 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:143]  user vidhi fetched posts 
-DEBUG 2026-04-23 14:27:27,984 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:84]  Fetching posts by user vidhi 
-DEBUG 2026-04-23 14:27:27,984 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:128]  user vidhi Fetching posts of user vidhi 
-INFO 2026-04-23 14:27:27,985 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:143]  user vidhi fetched posts 
-INFO 2026-04-23 14:27:54,361 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-DEBUG 2026-04-23 14:27:58,058 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:84]  Fetching posts by user vidhi 
-DEBUG 2026-04-23 14:27:58,059 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:126]  user vidhi Fetching posts of user vidhi 
-INFO 2026-04-23 14:27:58,060 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:141]  user vidhi successfully fetched Posts  
-DEBUG 2026-04-23 14:28:04,810 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:84]  Fetching posts by user vidhi 
-DEBUG 2026-04-23 14:28:04,811 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:126]  user vidhi Fetching posts of user vidhi 
-INFO 2026-04-23 14:28:04,815 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:141]  user vidhi successfully fetched Posts  
-DEBUG 2026-04-23 14:28:15,728 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:84]  Fetching posts by user vidhi 
-DEBUG 2026-04-23 14:28:15,734 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:126]  user vidhi Fetching posts of user vidhi 
-INFO 2026-04-23 14:28:15,764 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:141]  user vidhi successfully fetched Posts  
-INFO 2026-04-23 14:28:44,631 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-INFO 2026-04-23 14:31:47,053 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-INFO 2026-04-23 14:31:54,063 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-INFO 2026-04-23 14:34:23,492 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-DEBUG 2026-04-23 14:34:38,825 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: vidhi 
-INFO 2026-04-23 14:34:38,828 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: vidhi 
-DEBUG 2026-04-23 14:34:49,554 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: vidhi 
-INFO 2026-04-23 14:34:49,555 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: vidhi 
-DEBUG 2026-04-23 14:34:53,457 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: vidhi 
-INFO 2026-04-23 14:34:53,458 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: vidhi 
-DEBUG 2026-04-23 14:35:06,380 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing AvifImagePlugin 
-DEBUG 2026-04-23 14:35:06,389 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing BlpImagePlugin 
-DEBUG 2026-04-23 14:35:06,392 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing BmpImagePlugin 
-DEBUG 2026-04-23 14:35:06,393 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing BufrStubImagePlugin 
-DEBUG 2026-04-23 14:35:06,395 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing CurImagePlugin 
-DEBUG 2026-04-23 14:35:06,397 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing DcxImagePlugin 
-DEBUG 2026-04-23 14:35:06,402 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing DdsImagePlugin 
-DEBUG 2026-04-23 14:35:06,409 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing EpsImagePlugin 
-DEBUG 2026-04-23 14:35:06,412 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FitsImagePlugin 
-DEBUG 2026-04-23 14:35:06,415 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FliImagePlugin 
-DEBUG 2026-04-23 14:35:06,419 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FpxImagePlugin 
-DEBUG 2026-04-23 14:35:06,422 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:391]  Image: failed to import FpxImagePlugin: No module named 'olefile' 
-DEBUG 2026-04-23 14:35:06,423 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FtexImagePlugin 
-DEBUG 2026-04-23 14:35:06,425 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing GbrImagePlugin 
-DEBUG 2026-04-23 14:35:06,428 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing GifImagePlugin 
-DEBUG 2026-04-23 14:35:06,429 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing GribStubImagePlugin 
-DEBUG 2026-04-23 14:35:06,431 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing Hdf5StubImagePlugin 
-DEBUG 2026-04-23 14:35:06,434 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing IcnsImagePlugin 
-DEBUG 2026-04-23 14:35:06,441 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing IcoImagePlugin 
-DEBUG 2026-04-23 14:35:06,444 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing ImImagePlugin 
-DEBUG 2026-04-23 14:35:06,446 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing ImtImagePlugin 
-DEBUG 2026-04-23 14:35:06,450 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing IptcImagePlugin 
-DEBUG 2026-04-23 14:35:06,451 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing JpegImagePlugin 
-DEBUG 2026-04-23 14:35:06,452 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing Jpeg2KImagePlugin 
-DEBUG 2026-04-23 14:35:06,452 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing McIdasImagePlugin 
-DEBUG 2026-04-23 14:35:06,454 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MicImagePlugin 
-DEBUG 2026-04-23 14:35:06,457 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:391]  Image: failed to import MicImagePlugin: No module named 'olefile' 
-DEBUG 2026-04-23 14:35:06,457 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MpegImagePlugin 
-DEBUG 2026-04-23 14:35:06,462 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MpoImagePlugin 
-DEBUG 2026-04-23 14:35:06,465 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MspImagePlugin 
-DEBUG 2026-04-23 14:35:06,468 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PalmImagePlugin 
-DEBUG 2026-04-23 14:35:06,474 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PcdImagePlugin 
-DEBUG 2026-04-23 14:35:06,477 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PcxImagePlugin 
-DEBUG 2026-04-23 14:35:06,478 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PdfImagePlugin 
-DEBUG 2026-04-23 14:35:06,489 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PixarImagePlugin 
-DEBUG 2026-04-23 14:35:06,492 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PngImagePlugin 
-DEBUG 2026-04-23 14:35:06,492 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PpmImagePlugin 
-DEBUG 2026-04-23 14:35:06,492 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PsdImagePlugin 
-DEBUG 2026-04-23 14:35:06,494 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing QoiImagePlugin 
-DEBUG 2026-04-23 14:35:06,497 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing SgiImagePlugin 
-DEBUG 2026-04-23 14:35:06,500 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing SpiderImagePlugin 
-DEBUG 2026-04-23 14:35:06,502 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing SunImagePlugin 
-DEBUG 2026-04-23 14:35:06,505 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing TgaImagePlugin 
-DEBUG 2026-04-23 14:35:06,508 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing TiffImagePlugin 
-DEBUG 2026-04-23 14:35:06,508 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing WebPImagePlugin 
-DEBUG 2026-04-23 14:35:06,516 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing WmfImagePlugin 
-DEBUG 2026-04-23 14:35:06,519 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing XbmImagePlugin 
-DEBUG 2026-04-23 14:35:06,522 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing XpmImagePlugin 
-DEBUG 2026-04-23 14:35:06,524 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing XVThumbImagePlugin 
-INFO 2026-04-23 14:35:06,546 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:84]  Post created: post_id=14, user=shruti 
-WARNING 2026-04-23 14:35:19,386 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Not Found: /api/posts/6/ 
-DEBUG 2026-04-23 14:35:33,818 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: shruti 
-INFO 2026-04-23 14:35:33,820 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: shruti 
-DEBUG 2026-04-23 14:35:50,492 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: shruti 
-INFO 2026-04-23 14:35:50,493 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: shruti 
-DEBUG 2026-04-23 14:35:56,079 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: shruti 
-INFO 2026-04-23 14:35:56,080 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: shruti 
-DEBUG 2026-04-23 14:36:01,935 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: shruti 
-INFO 2026-04-23 14:36:01,947 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: shruti 
-DEBUG 2026-04-23 14:36:08,186 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: shruti 
-INFO 2026-04-23 14:36:08,187 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: shruti 
-DEBUG 2026-04-23 14:36:13,382 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: shruti 
-INFO 2026-04-23 14:36:13,383 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: shruti 
-DEBUG 2026-04-23 14:36:42,941 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: shruti 
-INFO 2026-04-23 14:36:42,943 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: shruti 
-DEBUG 2026-04-23 14:36:55,950 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: shruti 
-INFO 2026-04-23 14:36:55,951 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: shruti 
-WARNING 2026-04-23 14:37:16,840 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Forbidden: /api/posts/12/ 
-WARNING 2026-04-23 14:37:26,907 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Forbidden: /api/posts/13/ 
-DEBUG 2026-04-23 14:37:49,769 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: shruti 
-INFO 2026-04-23 14:37:49,770 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: shruti 
-INFO 2026-04-23 14:43:23,111 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-INFO 2026-04-23 14:44:57,274 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-INFO 2026-04-23 14:46:13,980 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-INFO 2026-04-23 14:46:38,883 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-INFO 2026-04-23 14:54:39,783 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-INFO 2026-04-23 14:55:24,845 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-INFO 2026-04-23 14:55:39,998 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-INFO 2026-04-23 14:55:53,963 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-INFO 2026-04-23 14:56:20,611 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-INFO 2026-04-23 14:57:05,017 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-INFO 2026-04-23 14:57:11,514 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-DEBUG 2026-04-23 14:57:22,360 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=my_posts 
-DEBUG 2026-04-23 14:57:22,361 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:84]  My posts requested by user=shruti 
-INFO 2026-04-23 14:57:22,362 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:86]  My posts fetched for user=shruti 
-INFO 2026-04-23 14:57:22,362 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:175]  User 6 fetching own posts 
-INFO 2026-04-23 14:58:13,487 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-INFO 2026-04-23 14:58:38,299 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-DEBUG 2026-04-23 14:58:42,875 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=my_posts 
-DEBUG 2026-04-23 14:58:42,875 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:84]  My posts requested by user=shruti 
-INFO 2026-04-23 14:58:42,876 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:86]  My posts fetched for user=shruti 
-INFO 2026-04-23 14:58:42,876 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:175]  User shruti fetching own posts 
-DEBUG 2026-04-23 14:59:53,202 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=retrieve 
-WARNING 2026-04-23 14:59:53,209 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Not Found: /api/posts/users/ 
-WARNING 2026-04-23 15:00:04,239 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Not Found: /api/posts/13/users/ 
-WARNING 2026-04-23 15:00:41,647 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Not Found: / 
-DEBUG 2026-04-23 15:00:47,251 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\drf_yasg\utils.py [lineno:561]  Forcing inline output for ModelSerializer named 'NestedSerializer':
-NestedSerializer(read_only=True):
-    id = BigIntegerField(label='ID', read_only=True)
-    password = CharField(max_length=128)
-    last_login = DateTimeField(allow_null=True, required=False)
-    is_superuser = BooleanField(help_text='Designates that this user has all permissions without explicitly assigning them.', label='Superuser status', required=False)
-    username = CharField(help_text='Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.', max_length=150, validators=[<django.contrib.auth.validators.UnicodeUsernameValidator object>, <UniqueValidator(queryset=User.objects.all())>])
-    first_name = CharField(allow_blank=True, max_length=150, required=False)
-    last_name = CharField(allow_blank=True, max_length=150, required=False)
-    is_staff = BooleanField(help_text='Designates whether the user can log into this admin site.', label='Staff status', required=False)
-    date_joined = DateTimeField(required=False)
-    email = EmailField(max_length=254, validators=[<UniqueValidator(queryset=User.objects.all())>])
-    is_verified = BooleanField(required=False)
-    is_private = BooleanField(required=False)
-    is_active = BooleanField(required=False)
-    created_at = DateTimeField(read_only=True)
-    profile_pic = ImageField(max_length=100, required=False)
-    groups = PrimaryKeyRelatedField(help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.', many=True, queryset=Group.objects.all(), required=False)
-    user_permissions = PrimaryKeyRelatedField(help_text='Specific permissions for this user.', many=True, queryset=Permission.objects.all(), required=False) 
-DEBUG 2026-04-23 15:01:20,998 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=get_post_owner 
-DEBUG 2026-04-23 15:01:21,002 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=get_post_owner 
-DEBUG 2026-04-23 15:01:21,002 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:93]  Fetching post owner stats for post_id=13 
-ERROR 2026-04-23 15:01:21,372 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Internal Server Error: /api/posts/13/user/ 
-Traceback (most recent call last):
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
-    return view_func(request, *args, **kwargs)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
-    return self.dispatch(request, *args, **kwargs)
-           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
-    self.raise_uncaught_exception(exc)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py", line 96, in get_post_owner
-    data = PostSerializer.get_user_stats(post.user)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py", line 184, in get_user_stats
-    logger.debug(f"Fetching status for user {user.usename}")
-                                             ^^^^^^^^^^^^
-AttributeError: 'User' object has no attribute 'usename'. Did you mean: 'username'?
-DEBUG 2026-04-23 15:01:23,193 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=get_post_owner 
-DEBUG 2026-04-23 15:01:23,197 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=get_post_owner 
-DEBUG 2026-04-23 15:01:23,198 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:93]  Fetching post owner stats for post_id=13 
-ERROR 2026-04-23 15:01:23,248 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Internal Server Error: /api/posts/13/user/ 
-Traceback (most recent call last):
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
-    return view_func(request, *args, **kwargs)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
-    return self.dispatch(request, *args, **kwargs)
-           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
-    self.raise_uncaught_exception(exc)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py", line 96, in get_post_owner
-    data = PostSerializer.get_user_stats(post.user)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py", line 184, in get_user_stats
-    logger.debug(f"Fetching status for user {user.usename}")
-                                             ^^^^^^^^^^^^
-AttributeError: 'User' object has no attribute 'usename'. Did you mean: 'username'?
-INFO 2026-04-23 15:01:53,571 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-DEBUG 2026-04-23 15:01:58,271 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=get_post_owner 
-DEBUG 2026-04-23 15:01:58,278 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=get_post_owner 
-DEBUG 2026-04-23 15:01:58,279 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:93]  Fetching post owner stats for post_id=13 
-DEBUG 2026-04-23 15:01:58,281 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:184]  Fetching status for user vidhi 
-INFO 2026-04-23 15:01:58,300 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:97]  Post owner stats fetched for user_id=7 
-INFO 2026-04-23 15:02:43,390 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-INFO 2026-04-23 15:03:30,277 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-INFO 2026-04-23 15:05:55,800 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-INFO 2026-04-23 15:09:48,847 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-INFO 2026-04-23 15:10:24,082 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-INFO 2026-04-23 15:10:41,372 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-DEBUG 2026-04-23 15:10:44,634 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=get_post_owner 
-DEBUG 2026-04-23 15:10:44,647 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=get_post_owner 
-DEBUG 2026-04-23 15:10:44,648 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:93]  Fetching post 13 owner status by user shruti 
-DEBUG 2026-04-23 15:10:44,650 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:184]  Fetching status of user vidhi  
-INFO 2026-04-23 15:10:44,670 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:97]   user shruti successfuly fetched Post owner user_id=vidhi 
-INFO 2026-04-23 15:11:14,928 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-INFO 2026-04-23 15:11:27,309 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py changed, reloading. 
-DEBUG 2026-04-23 15:11:31,025 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=get_post_owner 
-DEBUG 2026-04-23 15:11:31,032 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=get_post_owner 
-DEBUG 2026-04-23 15:11:31,032 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:93]  Fetching post 13 owner status by user shruti 
-DEBUG 2026-04-23 15:11:31,035 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:184]  Fetching status of user vidhi  
-INFO 2026-04-23 15:11:31,051 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:97]   user shruti successfuly fetched Post13 owner user vidhi 
-INFO 2026-04-23 15:12:39,447 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-DEBUG 2026-04-23 15:12:43,584 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=get_post_owner 
-DEBUG 2026-04-23 15:12:43,593 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=get_post_owner 
-DEBUG 2026-04-23 15:12:43,593 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:93]  Fetching post 13 owner status by user shruti 
-ERROR 2026-04-23 15:12:43,665 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Internal Server Error: /api/posts/13/user/ 
-Traceback (most recent call last):
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
-    return view_func(request, *args, **kwargs)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
-    return self.dispatch(request, *args, **kwargs)
-           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
-    self.raise_uncaught_exception(exc)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py", line 96, in get_post_owner
-    data = PostSerializer.get_user_stats(post.user)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py", line 184, in get_user_stats
-    logger.debug(f"Fetching post {user.post.id} owner user {user.username} ")
-                                  ^^^^^^^^^
-AttributeError: 'User' object has no attribute 'post'. Did you mean: 'posts'?
-INFO 2026-04-23 15:14:29,224 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-INFO 2026-04-23 15:14:37,820 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-DEBUG 2026-04-23 15:14:41,643 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=get_post_owner 
-DEBUG 2026-04-23 15:14:41,652 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=get_post_owner 
-DEBUG 2026-04-23 15:14:41,653 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:93]  Fetching post 13 owner status by user shruti 
-ERROR 2026-04-23 15:14:41,728 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249]  Internal Server Error: /api/posts/13/user/ 
-Traceback (most recent call last):
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
-    return view_func(request, *args, **kwargs)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
-    return self.dispatch(request, *args, **kwargs)
-           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
-    self.raise_uncaught_exception(exc)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py", line 96, in get_post_owner
-    data = PostSerializer.get_user_stats(post.user)
-  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py", line 184, in get_user_stats
-    post = user.post.id
-           ^^^^^^^^^
-AttributeError: 'User' object has no attribute 'post'. Did you mean: 'posts'?
-INFO 2026-04-23 15:14:59,483 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-DEBUG 2026-04-23 15:15:03,214 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=get_post_owner 
-DEBUG 2026-04-23 15:15:03,222 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=get_post_owner 
-DEBUG 2026-04-23 15:15:03,222 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:93]  Fetching post 13 owner status by user shruti 
-DEBUG 2026-04-23 15:15:03,225 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:184]  Fetching post owner user vidhi  
-INFO 2026-04-23 15:15:03,244 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:97]   user shruti successfuly fetched Post13 owner user vidhi 
-INFO 2026-04-23 15:15:34,637 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265]  C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py changed, reloading. 
-DEBUG 2026-04-23 15:15:42,032 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=list 
-DEBUG 2026-04-23 15:15:42,034 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: shruti 
-INFO 2026-04-23 15:15:42,036 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: shruti 
-DEBUG 2026-04-23 15:16:17,921 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=list 
-DEBUG 2026-04-23 15:16:17,921 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: shruti 
-INFO 2026-04-23 15:16:17,922 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: shruti 
-DEBUG 2026-04-23 15:16:26,979 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=list 
-DEBUG 2026-04-23 15:16:26,980 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: shruti 
-INFO 2026-04-23 15:16:26,981 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: shruti 
-DEBUG 2026-04-23 15:16:36,140 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=list 
-DEBUG 2026-04-23 15:16:36,141 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: shruti 
-INFO 2026-04-23 15:16:36,142 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: shruti 
-DEBUG 2026-04-23 15:16:44,638 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=list 
-DEBUG 2026-04-23 15:16:44,639 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: shruti 
-INFO 2026-04-23 15:16:44,640 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: shruti 
-DEBUG 2026-04-23 15:16:48,633 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=list 
-DEBUG 2026-04-23 15:16:48,633 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107]  Fetching posts by user: shruti 
-INFO 2026-04-23 15:16:48,634 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164]  Posts fetched successfully by user: shruti 
-DEBUG 2026-04-23 15:17:16,613 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=destroy 
-DEBUG 2026-04-23 15:17:16,617 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=destroy 
-WARNING 2026-04-23 15:17:16,619 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:65]  Delete request: post_id=10, requested_by=shruti 
-DEBUG 2026-04-23 15:17:16,623 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=destroy 
-INFO 2026-04-23 15:17:16,657 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:70]  Post deleted successfully: post_id=10, user=shruti 
-DEBUG 2026-04-23 15:18:31,198 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:42]  Checking permissions for action=create 
-DEBUG 2026-04-23 15:18:31,262 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing AvifImagePlugin 
-DEBUG 2026-04-23 15:18:31,274 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing BlpImagePlugin 
-DEBUG 2026-04-23 15:18:31,277 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing BmpImagePlugin 
-DEBUG 2026-04-23 15:18:31,278 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing BufrStubImagePlugin 
-DEBUG 2026-04-23 15:18:31,281 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing CurImagePlugin 
-DEBUG 2026-04-23 15:18:31,285 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing DcxImagePlugin 
-DEBUG 2026-04-23 15:18:31,292 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing DdsImagePlugin 
-DEBUG 2026-04-23 15:18:31,298 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing EpsImagePlugin 
-DEBUG 2026-04-23 15:18:31,300 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FitsImagePlugin 
-DEBUG 2026-04-23 15:18:31,303 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FliImagePlugin 
-DEBUG 2026-04-23 15:18:31,306 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FpxImagePlugin 
-DEBUG 2026-04-23 15:18:31,310 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:391]  Image: failed to import FpxImagePlugin: No module named 'olefile' 
-DEBUG 2026-04-23 15:18:31,310 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing FtexImagePlugin 
-DEBUG 2026-04-23 15:18:31,312 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing GbrImagePlugin 
-DEBUG 2026-04-23 15:18:31,315 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing GifImagePlugin 
-DEBUG 2026-04-23 15:18:31,316 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing GribStubImagePlugin 
-DEBUG 2026-04-23 15:18:31,318 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing Hdf5StubImagePlugin 
-DEBUG 2026-04-23 15:18:31,320 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing IcnsImagePlugin 
-DEBUG 2026-04-23 15:18:31,328 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing IcoImagePlugin 
-DEBUG 2026-04-23 15:18:31,331 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing ImImagePlugin 
-DEBUG 2026-04-23 15:18:31,333 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing ImtImagePlugin 
-DEBUG 2026-04-23 15:18:31,336 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing IptcImagePlugin 
-DEBUG 2026-04-23 15:18:31,341 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing JpegImagePlugin 
-DEBUG 2026-04-23 15:18:31,348 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing Jpeg2KImagePlugin 
-DEBUG 2026-04-23 15:18:31,350 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing McIdasImagePlugin 
-DEBUG 2026-04-23 15:18:31,353 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MicImagePlugin 
-DEBUG 2026-04-23 15:18:31,357 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:391]  Image: failed to import MicImagePlugin: No module named 'olefile' 
-DEBUG 2026-04-23 15:18:31,358 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MpegImagePlugin 
-DEBUG 2026-04-23 15:18:31,361 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MpoImagePlugin 
-DEBUG 2026-04-23 15:18:31,364 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing MspImagePlugin 
-DEBUG 2026-04-23 15:18:31,367 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PalmImagePlugin 
-DEBUG 2026-04-23 15:18:31,375 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PcdImagePlugin 
-DEBUG 2026-04-23 15:18:31,377 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PcxImagePlugin 
-DEBUG 2026-04-23 15:18:31,378 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PdfImagePlugin 
-DEBUG 2026-04-23 15:18:31,388 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PixarImagePlugin 
-DEBUG 2026-04-23 15:18:31,392 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PngImagePlugin 
-DEBUG 2026-04-23 15:18:31,392 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PpmImagePlugin 
-DEBUG 2026-04-23 15:18:31,392 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing PsdImagePlugin 
-DEBUG 2026-04-23 15:18:31,394 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing QoiImagePlugin 
-DEBUG 2026-04-23 15:18:31,397 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing SgiImagePlugin 
-DEBUG 2026-04-23 15:18:31,400 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing SpiderImagePlugin 
-DEBUG 2026-04-23 15:18:31,402 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing SunImagePlugin 
-DEBUG 2026-04-23 15:18:31,404 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing TgaImagePlugin 
-DEBUG 2026-04-23 15:18:31,408 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing TiffImagePlugin 
-DEBUG 2026-04-23 15:18:31,408 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing WebPImagePlugin 
-DEBUG 2026-04-23 15:18:31,417 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing WmfImagePlugin 
-DEBUG 2026-04-23 15:18:31,419 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing XbmImagePlugin 
-DEBUG 2026-04-23 15:18:31,456 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing XpmImagePlugin 
-DEBUG 2026-04-23 15:18:31,465 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\PIL\Image.py [lineno:388]  Importing XVThumbImagePlugin 
-INFO 2026-04-23 15:18:31,570 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:84]  Post created: post_id=15, user=shruti 
+DEBUG 2026-04-30 12:34:33,448 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:34:33,449 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def generate_summary(self, post_id):
+    return 1
+
+DEBUG 2026-04-30 12:34:33,450 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+DEBUG 2026-04-30 12:34:33,450 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def xmap(task, it):
+    return 1
+
+DEBUG 2026-04-30 12:34:33,451 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def backend_cleanup():
+    return 1
+
+DEBUG 2026-04-30 12:34:33,451 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chain(*args, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:34:33,452 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def xstarmap(task, it):
+    return 1
+
+DEBUG 2026-04-30 12:34:33,452 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:34:33,453 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:34:33,453 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chunks(task, it, n):
+    return 1
+
+WARNING 2026-04-30 12:34:54,406 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Unauthorized: /api/posts/
+WARNING 2026-04-30 12:35:12,570 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Unauthorized: /api/users/register/
+WARNING 2026-04-30 12:35:45,755 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Unauthorized: /api/users/register/
+WARNING 2026-04-30 12:35:53,522 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Bad Request: /api/users/register/
+WARNING 2026-04-30 12:36:06,176 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Bad Request: /api/users/register/
+WARNING 2026-04-30 12:36:59,284 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Bad Request: /api/users/login/
+INFO 2026-04-30 12:37:17,357 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:169] user successfully loggin shruti
+DEBUG 2026-04-30 12:38:13,942 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=create
+WARNING 2026-04-30 12:38:13,942 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Unauthorized: /api/posts/
+DEBUG 2026-04-30 12:38:23,376 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=create
+INFO 2026-04-30 12:38:23,397 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:84] Post created: post_id=64, user=shruti
+DEBUG 2026-04-30 12:38:23,546 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def xstarmap(task, it):
+    return 1
+
+DEBUG 2026-04-30 12:38:23,550 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:38:23,551 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def generate_summary(self, post_id):
+    return 1
+
+DEBUG 2026-04-30 12:38:23,551 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:38:23,552 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chunks(task, it, n):
+    return 1
+
+DEBUG 2026-04-30 12:38:23,558 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:38:23,560 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+DEBUG 2026-04-30 12:38:23,561 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def xmap(task, it):
+    return 1
+
+DEBUG 2026-04-30 12:38:23,562 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def backend_cleanup():
+    return 1
+
+DEBUG 2026-04-30 12:38:23,562 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chain(*args, **kwargs):
+    return 1
+
+ERROR 2026-04-30 12:38:27,806 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\backends\redis.py [lineno:420] Connection to Redis lost: Retry (0/20) now.
+ERROR 2026-04-30 12:38:29,836 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\backends\redis.py [lineno:420] Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR 2026-04-30 12:38:32,865 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\backends\redis.py [lineno:420] Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR 2026-04-30 12:38:35,972 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\backends\redis.py [lineno:420] Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR 2026-04-30 12:38:38,991 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\backends\redis.py [lineno:420] Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR 2026-04-30 12:38:42,020 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\backends\redis.py [lineno:420] Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR 2026-04-30 12:38:45,073 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\backends\redis.py [lineno:420] Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR 2026-04-30 12:38:48,200 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\backends\redis.py [lineno:420] Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR 2026-04-30 12:38:51,222 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\backends\redis.py [lineno:420] Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR 2026-04-30 12:38:54,252 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\backends\redis.py [lineno:420] Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR 2026-04-30 12:38:57,280 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\backends\redis.py [lineno:420] Connection to Redis lost: Retry (10/20) in 1.00 second.
+DEBUG 2026-04-30 12:40:13,660 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:40:13,661 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def generate_summary(self, post_id):
+    return 1
+
+DEBUG 2026-04-30 12:40:13,662 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+DEBUG 2026-04-30 12:40:13,663 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def xmap(task, it):
+    return 1
+
+DEBUG 2026-04-30 12:40:13,663 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def backend_cleanup():
+    return 1
+
+DEBUG 2026-04-30 12:40:13,664 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chain(*args, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:40:13,665 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def xstarmap(task, it):
+    return 1
+
+DEBUG 2026-04-30 12:40:13,666 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:40:13,667 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:40:13,668 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chunks(task, it, n):
+    return 1
+
+DEBUG 2026-04-30 12:40:21,053 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=create
+INFO 2026-04-30 12:40:21,060 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:84] Post created: post_id=65, user=shruti
+DEBUG 2026-04-30 12:40:21,094 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def xstarmap(task, it):
+    return 1
+
+DEBUG 2026-04-30 12:40:21,096 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:40:21,097 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def generate_summary(self, post_id):
+    return 1
+
+DEBUG 2026-04-30 12:40:21,098 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:40:21,099 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chunks(task, it, n):
+    return 1
+
+DEBUG 2026-04-30 12:40:21,107 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:40:21,109 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+DEBUG 2026-04-30 12:40:21,110 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def xmap(task, it):
+    return 1
+
+DEBUG 2026-04-30 12:40:21,111 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def backend_cleanup():
+    return 1
+
+DEBUG 2026-04-30 12:40:21,111 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chain(*args, **kwargs):
+    return 1
+
+INFO 2026-04-30 12:40:21,338 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\openrouter.py [lineno:51] Generating summary for post
+DEBUG 2026-04-30 12:40:22,627 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\openrouter.py [lineno:38] Received response from OpenRouter
+INFO 2026-04-30 12:40:32,693 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\openrouter.py [lineno:51] Generating summary for post
+DEBUG 2026-04-30 12:40:33,254 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\openrouter.py [lineno:38] Received response from OpenRouter
+INFO 2026-04-30 12:40:43,313 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\openrouter.py [lineno:51] Generating summary for post
+DEBUG 2026-04-30 12:40:43,871 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\openrouter.py [lineno:38] Received response from OpenRouter
+INFO 2026-04-30 12:40:53,938 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\openrouter.py [lineno:51] Generating summary for post
+DEBUG 2026-04-30 12:40:54,568 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\openrouter.py [lineno:38] Received response from OpenRouter
+INFO 2026-04-30 12:44:41,132 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\openrouter.py changed, reloading.
+INFO 2026-04-30 12:45:17,609 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\openrouter.py changed, reloading.
+DEBUG 2026-04-30 12:45:59,801 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=destroy
+WARNING 2026-04-30 12:45:59,808 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Not Found: /api/posts/62/
+DEBUG 2026-04-30 12:46:02,532 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=destroy
+WARNING 2026-04-30 12:46:02,538 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Not Found: /api/posts/63/
+DEBUG 2026-04-30 12:46:05,013 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=destroy
+DEBUG 2026-04-30 12:46:05,017 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=destroy
+WARNING 2026-04-30 12:46:05,020 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:72] Delete request: post_id=64, requested_by=shruti
+DEBUG 2026-04-30 12:46:05,024 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=destroy
+INFO 2026-04-30 12:46:05,075 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:77] Post deleted successfully: post_id=64, user=shruti
+DEBUG 2026-04-30 12:46:07,832 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=destroy
+DEBUG 2026-04-30 12:46:07,837 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=destroy
+WARNING 2026-04-30 12:46:07,839 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:72] Delete request: post_id=65, requested_by=shruti
+DEBUG 2026-04-30 12:46:07,841 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=destroy
+INFO 2026-04-30 12:46:07,870 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:77] Post deleted successfully: post_id=65, user=shruti
+DEBUG 2026-04-30 12:47:24,171 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:47:24,172 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def generate_summary(self, post_id):
+    return 1
+
+DEBUG 2026-04-30 12:47:24,173 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+DEBUG 2026-04-30 12:47:24,173 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def xmap(task, it):
+    return 1
+
+DEBUG 2026-04-30 12:47:24,174 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def backend_cleanup():
+    return 1
+
+DEBUG 2026-04-30 12:47:24,175 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chain(*args, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:47:24,176 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def xstarmap(task, it):
+    return 1
+
+DEBUG 2026-04-30 12:47:24,177 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:47:24,178 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:47:24,179 C:\Users\shruti ghumaliya\Onedrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chunks(task, it, n):
+    return 1
+
+DEBUG 2026-04-30 12:47:29,639 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=create
+INFO 2026-04-30 12:47:29,649 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:84] Post created: post_id=66, user=shruti
+DEBUG 2026-04-30 12:47:29,683 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def xstarmap(task, it):
+    return 1
+
+DEBUG 2026-04-30 12:47:29,686 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:47:29,687 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def generate_summary(self, post_id):
+    return 1
+
+DEBUG 2026-04-30 12:47:29,688 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:47:29,689 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chunks(task, it, n):
+    return 1
+
+DEBUG 2026-04-30 12:47:29,693 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 12:47:29,693 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+DEBUG 2026-04-30 12:47:29,695 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def xmap(task, it):
+    return 1
+
+DEBUG 2026-04-30 12:47:29,697 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def backend_cleanup():
+    return 1
+
+DEBUG 2026-04-30 12:47:29,698 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chain(*args, **kwargs):
+    return 1
+
+INFO 2026-04-30 12:47:29,825 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\openrouter.py [lineno:51] Generating summary for post
+DEBUG 2026-04-30 12:47:32,373 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\openrouter.py [lineno:38] Received response from OpenRouter
+INFO 2026-04-30 12:47:32,387 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\openrouter.py [lineno:46] OpenRouter generation successful
+INFO 2026-04-30 12:56:19,170 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\openrouter.py changed, reloading.
+DEBUG 2026-04-30 13:04:44,241 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=list
+DEBUG 2026-04-30 13:04:44,242 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107] Fetching posts by user: shruti
+INFO 2026-04-30 13:04:44,244 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164] Posts fetched successfully by user: shruti
+INFO 2026-04-30 13:08:30,402 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\openrouter.py changed, reloading.
+INFO 2026-04-30 14:14:22,654 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\bg_tasks.py changed, reloading.

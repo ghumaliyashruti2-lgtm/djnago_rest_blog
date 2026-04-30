@@ -8,9 +8,12 @@ class Post(models.Model):
 
     title = models.CharField(max_length=200)
     content = models.TextField()
-    
+    summary = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to='post_images/', null=True, blank=True)
-
+    status = models.CharField(
+        max_length=20,
+        default="processing"
+    )
     is_private = models.BooleanField(default=True)
 
     user = models.ForeignKey(

@@ -1,13 +1,13 @@
 import logging.config
-import logging
 from django.conf import settings
+
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
 
     "formatters": {
         "verbose": {
-            "format": "{levelname} {asctime} {pathname} [lineno:{lineno}]  {message} ",
+            "format": "{levelname} {asctime} {pathname} [lineno:{lineno}] {message}",
             "style": "{",
         },
     },
@@ -22,6 +22,7 @@ LOGGING = {
         "console": {
             "class": "logging.StreamHandler",
             "level": "DEBUG",
+            "formatter": "verbose",
         },
     },
 
@@ -29,19 +30,24 @@ LOGGING = {
         "handlers": ["console", "file"],
         "level": "DEBUG",
     },
+
+    "loggers": {
+        "blog": {
+            "handlers": ["console", "file"],
+            "level": "DEBUG",
+            "propagate": False,
+        },
+        "celery": {
+            "handlers": ["console", "file"],
+            "level": "DEBUG",
+            "propagate": False,
+        },
+        "django.utils.autoreload": {
+            "handlers": ["console"],
+            "level": "ERROR",
+            "propagate": False,
+        },
+    },
 }
 
 logging.config.dictConfig(LOGGING)
-
-'''
-    "formatters": {
-        "standard": {
-            "format": "{levelname} {name} {lineno} {pathname} {funcname} {filename} {asctime} {module} {message}",
-            "style": "{",
-        },
-        "simple": {
-            "format": "{levelname} {lineno} {asctime} {module} {message}",
-            "style": "{",
-        },
-    },
-'''
