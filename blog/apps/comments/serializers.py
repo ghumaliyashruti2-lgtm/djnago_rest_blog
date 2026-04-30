@@ -62,7 +62,7 @@ class CreateCommentSerializer(serializers.Serializer):
         # check account private or not 
         if post.user != request.user:  
             
-            if post.user.is_private:  
+            if post.is_private:  
                 
                 is_following = Follow.objects.filter(
                     follower=request.user,
@@ -134,7 +134,7 @@ class ReplyCommentSerializer(serializers.Serializer):
         logger.debug(f"User {request.user.username} replying to comment {parent.id} on post {post.id}")
 
         if post.user != request.user:
-            if post.user.is_private:
+            if post.is_private:
                 is_following = Follow.objects.filter(
                     follower=request.user,
                     following=post.user

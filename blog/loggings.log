@@ -297,3 +297,357 @@ DEBUG 2026-04-30 13:04:44,242 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_
 INFO 2026-04-30 13:04:44,244 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164] Posts fetched successfully by user: shruti
 INFO 2026-04-30 13:08:30,402 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\blog\openrouter.py changed, reloading.
 INFO 2026-04-30 14:14:22,654 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\bg_tasks.py changed, reloading.
+WARNING 2026-04-30 14:28:21,982 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Not Found: /
+WARNING 2026-04-30 14:28:22,307 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Not Found: /favicon.ico
+WARNING 2026-04-30 14:28:33,545 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Not Found: /api/comment/posts/66/
+WARNING 2026-04-30 14:28:42,978 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Not Found: /
+DEBUG 2026-04-30 14:28:54,239 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\drf_yasg\utils.py [lineno:561] Forcing inline output for ModelSerializer named 'NestedSerializer':
+NestedSerializer(read_only=True):
+    id = BigIntegerField(label='ID', read_only=True)
+    password = CharField(max_length=128)
+    last_login = DateTimeField(allow_null=True, required=False)
+    is_superuser = BooleanField(help_text='Designates that this user has all permissions without explicitly assigning them.', label='Superuser status', required=False)
+    username = CharField(help_text='Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.', max_length=150, validators=[<django.contrib.auth.validators.UnicodeUsernameValidator object>, <UniqueValidator(queryset=User.objects.all())>])
+    first_name = CharField(allow_blank=True, max_length=150, required=False)
+    last_name = CharField(allow_blank=True, max_length=150, required=False)
+    is_staff = BooleanField(help_text='Designates whether the user can log into this admin site.', label='Staff status', required=False)
+    date_joined = DateTimeField(required=False)
+    email = EmailField(max_length=254, validators=[<UniqueValidator(queryset=User.objects.all())>])
+    is_verified = BooleanField(required=False)
+    is_private = BooleanField(required=False)
+    is_active = BooleanField(required=False)
+    created_at = DateTimeField(read_only=True)
+    profile_pic = ImageField(max_length=100, required=False)
+    groups = PrimaryKeyRelatedField(help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.', many=True, queryset=Group.objects.all(), required=False)
+    user_permissions = PrimaryKeyRelatedField(help_text='Specific permissions for this user.', many=True, queryset=Permission.objects.all(), required=False)
+DEBUG 2026-04-30 14:29:07,385 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\views.py [lineno:64] user shruti trying to comment on post my post 2
+DEBUG 2026-04-30 14:29:07,385 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:60] User shruti trying to comment on post 66
+INFO 2026-04-30 14:29:07,414 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:82] Comment created: user=shruti, post=66, comment_id=26
+INFO 2026-04-30 14:29:07,415 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\views.py [lineno:66] Comment created: user=shruti, post=my post 2, comment_id=26
+DEBUG 2026-04-30 14:30:27,667 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\views.py [lineno:64] user shruti trying to comment on post my post 2
+DEBUG 2026-04-30 14:30:27,668 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:60] User shruti trying to comment on post 66
+INFO 2026-04-30 14:30:27,673 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:82] Comment created: user=shruti, post=66, comment_id=27
+INFO 2026-04-30 14:30:27,674 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\views.py [lineno:66] Comment created: user=shruti, post=my post 2, comment_id=27
+WARNING 2026-04-30 14:30:48,611 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Method Not Allowed: /api/notifications/
+DEBUG 2026-04-30 14:31:28,012 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=list
+DEBUG 2026-04-30 14:31:28,012 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107] Fetching posts by user: shruti
+INFO 2026-04-30 14:31:28,015 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164] Posts fetched successfully by user: shruti
+WARNING 2026-04-30 14:32:53,078 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Method Not Allowed: /api/likes/posts/66/
+DEBUG 2026-04-30 14:33:00,910 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:16] user Fetching like or unlike toggle on post id=66  
+DEBUG 2026-04-30 14:33:00,915 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:28] User shruti toggling like on own post 66
+WARNING 2026-04-30 14:33:00,931 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:62] User shruti like own post: 66
+INFO 2026-04-30 14:33:00,931 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:73] like notification sent to user : shruti
+WARNING 2026-04-30 14:33:21,777 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Method Not Allowed: /api/likes/posts/66/
+DEBUG 2026-04-30 14:33:27,021 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:16] user Fetching like or unlike toggle on post id=66  
+DEBUG 2026-04-30 14:33:27,025 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:28] User shruti toggling like on own post 66
+WARNING 2026-04-30 14:33:27,040 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:50] User shruti unlike own post: 66
+DEBUG 2026-04-30 14:33:31,223 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:16] user Fetching like or unlike toggle on post id=66  
+DEBUG 2026-04-30 14:33:31,228 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:28] User shruti toggling like on own post 66
+WARNING 2026-04-30 14:33:31,274 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:62] User shruti like own post: 66
+INFO 2026-04-30 14:33:31,303 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:73] like notification sent to user : shruti
+DEBUG 2026-04-30 14:33:36,979 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:16] user Fetching like or unlike toggle on post id=66  
+DEBUG 2026-04-30 14:33:36,983 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:28] User shruti toggling like on own post 66
+WARNING 2026-04-30 14:33:36,988 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:50] User shruti unlike own post: 66
+DEBUG 2026-04-30 14:33:44,057 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:16] user Fetching like or unlike toggle on post id=66  
+DEBUG 2026-04-30 14:33:44,060 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:28] User shruti toggling like on own post 66
+WARNING 2026-04-30 14:33:44,068 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:62] User shruti like own post: 66
+INFO 2026-04-30 14:33:44,068 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:73] like notification sent to user : shruti
+DEBUG 2026-04-30 14:33:51,506 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:16] user Fetching like or unlike toggle on post id=66  
+DEBUG 2026-04-30 14:33:51,510 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:28] User shruti toggling like on own post 66
+WARNING 2026-04-30 14:33:51,520 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:50] User shruti unlike own post: 66
+WARNING 2026-04-30 14:36:36,800 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Not Found: /api/rates/posts/66/
+DEBUG 2026-04-30 14:37:08,242 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\ratings\serializers.py [lineno:18] Validating rating value=4 by user shruti
+DEBUG 2026-04-30 14:37:08,245 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\ratings\serializers.py [lineno:38] User shruti import rating value 4 on own post 66
+INFO 2026-04-30 14:37:08,270 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\ratings\serializers.py [lineno:66] user shruti is successfully created Rating 4 on own post=66 
+WARNING 2026-04-30 14:37:28,970 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Method Not Allowed: /api/notifications/
+WARNING 2026-04-30 14:37:48,455 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Unauthorized: /api/notifications/
+DEBUG 2026-04-30 14:39:20,434 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=list
+DEBUG 2026-04-30 14:39:20,434 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107] Fetching posts by user: shruti
+INFO 2026-04-30 14:39:20,437 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164] Posts fetched successfully by user: shruti
+DEBUG 2026-04-30 14:39:28,081 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\follows\serializers.py [lineno:33] Validate follow: follower=shruti, following=shruti
+ERROR 2026-04-30 14:39:28,082 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\follows\serializers.py [lineno:40] User shruti tried to follow themselves
+WARNING 2026-04-30 14:39:28,083 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Bad Request: /api/follows/users/8/
+WARNING 2026-04-30 14:40:10,600 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Unauthorized: /api/posts/
+WARNING 2026-04-30 14:42:52,474 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Not Found: /api/register/
+WARNING 2026-04-30 14:43:01,641 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Unauthorized: /api/users/register/
+INFO 2026-04-30 14:43:15,488 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:37] user shruti successfully register
+DEBUG 2026-04-30 14:44:01,623 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:62] OTP verification started for ghumaliyashruti2@gmail.com
+INFO 2026-04-30 14:44:01,712 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:87] OTP verified successfully for ghumaliyashruti2@gmail.com
+INFO 2026-04-30 14:44:28,226 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:169] user successfully loggin shruti
+DEBUG 2026-04-30 14:45:24,730 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=create
+INFO 2026-04-30 14:45:24,739 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:84] Post created: post_id=67, user=shruti
+DEBUG 2026-04-30 14:45:24,799 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def xstarmap(task, it):
+    return 1
+
+DEBUG 2026-04-30 14:45:24,806 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 14:45:24,809 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 14:45:24,812 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chunks(task, it, n):
+    return 1
+
+DEBUG 2026-04-30 14:45:24,825 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 14:45:24,827 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def generate_summary(self, post_id):
+    return 1
+
+DEBUG 2026-04-30 14:45:24,829 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+DEBUG 2026-04-30 14:45:24,832 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def xmap(task, it):
+    return 1
+
+DEBUG 2026-04-30 14:45:24,833 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def backend_cleanup():
+    return 1
+
+DEBUG 2026-04-30 14:45:24,837 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chain(*args, **kwargs):
+    return 1
+
+INFO 2026-04-30 14:47:02,511 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:37] user vidhi successfully register
+DEBUG 2026-04-30 14:47:46,100 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:62] OTP verification started for shrutighumaliyaofficial@gmail.com
+INFO 2026-04-30 14:47:46,165 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:87] OTP verified successfully for shrutighumaliyaofficial@gmail.com
+INFO 2026-04-30 14:48:17,427 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:169] user successfully loggin vidhi
+INFO 2026-04-30 14:48:54,867 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:169] user successfully loggin vidhi
+DEBUG 2026-04-30 14:50:02,099 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\views.py [lineno:64] user vidhi trying to comment on post my llm generated post
+DEBUG 2026-04-30 14:50:02,100 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:60] User vidhi trying to comment on post 67
+ERROR 2026-04-30 14:50:02,109 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:73] User vidhi tried to comment on private post 67
+WARNING 2026-04-30 14:50:02,112 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Bad Request: /api/comments/posts/67/
+INFO 2026-04-30 14:57:49,272 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+INFO 2026-04-30 14:57:57,121 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+INFO 2026-04-30 14:58:31,363 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+INFO 2026-04-30 14:59:26,809 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+INFO 2026-04-30 14:59:55,671 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+INFO 2026-04-30 15:00:02,323 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+DEBUG 2026-04-30 15:00:08,301 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\views.py [lineno:64] user vidhi trying to comment on post my llm generated post
+DEBUG 2026-04-30 15:00:08,302 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:59] User vidhi trying to comment on post 67
+ERROR 2026-04-30 15:00:08,304 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:63] User vidhi tried to comment on private post 67
+WARNING 2026-04-30 15:00:08,307 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Bad Request: /api/comments/posts/67/
+INFO 2026-04-30 15:00:48,666 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+INFO 2026-04-30 15:07:14,537 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\models.py changed, reloading.
+INFO 2026-04-30 15:07:28,212 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\models.py changed, reloading.
+INFO 2026-04-30 15:09:51,872 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\models.py changed, reloading.
+INFO 2026-04-30 15:10:46,811 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\models.py changed, reloading.
+INFO 2026-04-30 15:14:08,919 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\constants.py changed, reloading.
+INFO 2026-04-30 15:16:42,878 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\bg_tasks.py changed, reloading.
+INFO 2026-04-30 15:16:56,686 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\bg_tasks.py changed, reloading.
+INFO 2026-04-30 15:17:05,841 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\bg_tasks.py changed, reloading.
+INFO 2026-04-30 15:17:30,499 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\bg_tasks.py changed, reloading.
+INFO 2026-04-30 15:17:36,801 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\bg_tasks.py changed, reloading.
+WARNING 2026-04-30 17:27:20,035 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Method Not Allowed: /api/notifications/
+DEBUG 2026-04-30 17:29:27,040 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\follows\serializers.py [lineno:33] Validate follow: follower=vidhi, following=shruti
+DEBUG 2026-04-30 17:29:27,054 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\follows\serializers.py [lineno:69] user vidhi try to follow user shruti
+INFO 2026-04-30 17:29:27,101 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\follows\serializers.py [lineno:75] User vidhi successfully start to followed user shruti
+DEBUG 2026-04-30 17:29:27,128 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\follows\serializers.py [lineno:84] Follow notification sent to user shruti
+DEBUG 2026-04-30 17:29:35,417 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\notifications\serializers.py [lineno:15] Generating notification message by user shruti notification id=22, type=follow
+WARNING 2026-04-30 17:29:52,583 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Not Found: /api/comments/posts/66/
+DEBUG 2026-04-30 17:29:58,412 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\views.py [lineno:64] user vidhi trying to comment on post my llm generated post
+DEBUG 2026-04-30 17:29:58,415 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:60] User vidhi trying to comment on post 67
+INFO 2026-04-30 17:29:58,435 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:82] Comment created: user=vidhi, post=67, comment_id=28
+DEBUG 2026-04-30 17:29:58,444 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:94] Notification sent user vidhi for comment 28
+INFO 2026-04-30 17:29:58,445 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\views.py [lineno:66] Comment created: user=vidhi, post=my llm generated post, comment_id=28
+DEBUG 2026-04-30 17:30:06,792 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\notifications\serializers.py [lineno:15] Generating notification message by user shruti notification id=23, type=comment
+WARNING 2026-04-30 17:31:16,556 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Unauthorized: /api/users/register/
+INFO 2026-04-30 17:31:24,297 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:37] user riya successfully register
+DEBUG 2026-04-30 17:32:22,422 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:62] OTP verification started for shruti.ghumaliya131359@marwadiuniversity.ac.in
+INFO 2026-04-30 17:32:22,479 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:87] OTP verified successfully for shruti.ghumaliya131359@marwadiuniversity.ac.in
+WARNING 2026-04-30 17:32:30,141 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Bad Request: /api/users/login/
+INFO 2026-04-30 17:32:55,352 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\users\serializers.py [lineno:169] user successfully loggin riya
+DEBUG 2026-04-30 17:34:34,333 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\views.py [lineno:64] user riya trying to comment on post my llm generated post
+DEBUG 2026-04-30 17:34:34,333 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:60] User riya trying to comment on post 67
+ERROR 2026-04-30 17:34:34,339 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:73] User riya tried to comment on private post 67
+WARNING 2026-04-30 17:34:34,339 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Bad Request: /api/comments/posts/67/
+INFO 2026-04-30 17:37:45,570 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+INFO 2026-04-30 17:38:13,436 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+INFO 2026-04-30 17:38:39,375 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+DEBUG 2026-04-30 17:38:44,002 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\views.py [lineno:64] user riya trying to comment on post my llm generated post
+DEBUG 2026-04-30 17:38:44,012 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:60] User riya trying to comment on post 67
+ERROR 2026-04-30 17:38:45,049 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Internal Server Error: /api/comments/posts/67/
+Traceback (most recent call last):
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\views.py", line 65, in perform_create
+    comment = serializer.save(post=post, user=self.request.user)
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py", line 70, in create
+    if post.visibility == "private" or not is_following:
+       ^^^^^^^^^^^^^^^
+AttributeError: 'Post' object has no attribute 'visibility'
+INFO 2026-04-30 17:39:16,912 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+INFO 2026-04-30 17:39:44,292 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+INFO 2026-04-30 17:39:55,539 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+DEBUG 2026-04-30 17:40:22,346 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\views.py [lineno:64] user riya trying to comment on post my llm generated post
+DEBUG 2026-04-30 17:40:22,348 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:60] User riya trying to comment on post 67
+ERROR 2026-04-30 17:40:22,361 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:71] User riya tried to comment on restricted post 67
+WARNING 2026-04-30 17:40:22,372 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Bad Request: /api/comments/posts/67/
+INFO 2026-04-30 17:43:22,790 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+INFO 2026-04-30 17:45:05,082 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+INFO 2026-04-30 17:49:23,771 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+INFO 2026-04-30 17:49:39,148 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+INFO 2026-04-30 17:49:52,820 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py changed, reloading.
+DEBUG 2026-04-30 17:50:06,004 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\views.py [lineno:64] user riya trying to comment on post my llm generated post
+DEBUG 2026-04-30 17:50:06,005 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:60] User riya trying to comment on post 67
+INFO 2026-04-30 17:50:06,021 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:82] Comment created: user=riya, post=67, comment_id=29
+DEBUG 2026-04-30 17:50:06,036 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:94] Notification sent user riya for comment 29
+INFO 2026-04-30 17:50:06,037 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\views.py [lineno:66] Comment created: user=riya, post=my llm generated post, comment_id=29
+DEBUG 2026-04-30 17:50:13,527 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\notifications\serializers.py [lineno:15] Generating notification message by user shruti notification id=24, type=comment
+DEBUG 2026-04-30 17:50:35,264 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=list
+DEBUG 2026-04-30 17:50:35,265 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107] Fetching posts by user: shruti
+INFO 2026-04-30 17:50:35,266 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164] Posts fetched successfully by user: shruti
+DEBUG 2026-04-30 17:51:57,630 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=create
+INFO 2026-04-30 17:51:57,637 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:84] Post created: post_id=68, user=shruti
+DEBUG 2026-04-30 17:51:57,682 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def xstarmap(task, it):
+    return 1
+
+DEBUG 2026-04-30 17:51:57,697 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 17:51:57,699 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 17:51:57,700 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chunks(task, it, n):
+    return 1
+
+DEBUG 2026-04-30 17:51:57,707 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 17:51:57,709 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def generate_summary(self, post_id):
+    return 1
+
+DEBUG 2026-04-30 17:51:57,711 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+DEBUG 2026-04-30 17:51:57,712 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def xmap(task, it):
+    return 1
+
+DEBUG 2026-04-30 17:51:57,713 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def backend_cleanup():
+    return 1
+
+DEBUG 2026-04-30 17:51:57,715 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\celery\utils\functional.py [lineno:375] 
+def chain(*args, **kwargs):
+    return 1
+
+DEBUG 2026-04-30 17:52:09,606 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=list
+DEBUG 2026-04-30 17:52:09,607 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107] Fetching posts by user: shruti
+INFO 2026-04-30 17:52:09,608 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164] Posts fetched successfully by user: shruti
+DEBUG 2026-04-30 17:52:22,634 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=list
+DEBUG 2026-04-30 17:52:22,634 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107] Fetching posts by user: shruti
+INFO 2026-04-30 17:52:22,636 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164] Posts fetched successfully by user: shruti
+DEBUG 2026-04-30 17:52:27,754 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\views.py [lineno:43] Checking permissions for action=list
+DEBUG 2026-04-30 17:52:27,754 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:107] Fetching posts by user: shruti
+INFO 2026-04-30 17:52:27,755 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\posts\serializers.py [lineno:164] Posts fetched successfully by user: shruti
+DEBUG 2026-04-30 17:52:51,285 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\views.py [lineno:64] user riya trying to comment on post my llm generated post 2
+DEBUG 2026-04-30 17:52:51,286 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:60] User riya trying to comment on post 68
+ERROR 2026-04-30 17:52:51,290 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:73] User riya tried to comment on private post 68
+WARNING 2026-04-30 17:52:51,291 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Bad Request: /api/comments/posts/68/
+DEBUG 2026-04-30 17:52:59,455 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\views.py [lineno:64] user vidhi trying to comment on post my llm generated post 2
+DEBUG 2026-04-30 17:52:59,455 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:60] User vidhi trying to comment on post 68
+INFO 2026-04-30 17:52:59,463 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:82] Comment created: user=vidhi, post=68, comment_id=30
+DEBUG 2026-04-30 17:52:59,474 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\serializers.py [lineno:94] Notification sent user vidhi for comment 30
+INFO 2026-04-30 17:52:59,475 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\comments\views.py [lineno:66] Comment created: user=vidhi, post=my llm generated post 2, comment_id=30
+DEBUG 2026-04-30 17:53:13,956 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\notifications\serializers.py [lineno:15] Generating notification message by user shruti notification id=25, type=comment
+WARNING 2026-04-30 17:55:56,060 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Not Found: /
+DEBUG 2026-04-30 17:56:05,349 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\drf_yasg\utils.py [lineno:561] Forcing inline output for ModelSerializer named 'NestedSerializer':
+NestedSerializer(read_only=True):
+    id = BigIntegerField(label='ID', read_only=True)
+    password = CharField(max_length=128)
+    last_login = DateTimeField(allow_null=True, required=False)
+    is_superuser = BooleanField(help_text='Designates that this user has all permissions without explicitly assigning them.', label='Superuser status', required=False)
+    username = CharField(help_text='Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.', max_length=150, validators=[<django.contrib.auth.validators.UnicodeUsernameValidator object>, <UniqueValidator(queryset=User.objects.all())>])
+    first_name = CharField(allow_blank=True, max_length=150, required=False)
+    last_name = CharField(allow_blank=True, max_length=150, required=False)
+    is_staff = BooleanField(help_text='Designates whether the user can log into this admin site.', label='Staff status', required=False)
+    date_joined = DateTimeField(required=False)
+    email = EmailField(max_length=254, validators=[<UniqueValidator(queryset=User.objects.all())>])
+    is_verified = BooleanField(required=False)
+    is_private = BooleanField(required=False)
+    is_active = BooleanField(required=False)
+    created_at = DateTimeField(read_only=True)
+    profile_pic = ImageField(max_length=100, required=False)
+    groups = PrimaryKeyRelatedField(help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.', many=True, queryset=Group.objects.all(), required=False)
+    user_permissions = PrimaryKeyRelatedField(help_text='Specific permissions for this user.', many=True, queryset=Permission.objects.all(), required=False)
+DEBUG 2026-04-30 17:56:18,439 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:16] user Fetching like or unlike toggle on post id=67  
+DEBUG 2026-04-30 17:56:18,445 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:30] User riya toggling like on post 67
+ERROR 2026-04-30 17:56:18,537 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Internal Server Error: /api/likes/posts/67/
+Traceback (most recent call last):
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\views.py", line 28, in post
+    data = serializer.save()
+  File "C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py", line 41, in save
+    logger.error(f"Unauthorized User {request.user.usename} tried to like on private post {post.id}")
+                                      ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'usename'. Did you mean: 'username'?
+INFO 2026-04-30 17:56:48,355 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py changed, reloading.
+DEBUG 2026-04-30 17:56:52,909 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:16] user Fetching like or unlike toggle on post id=67  
+DEBUG 2026-04-30 17:56:52,915 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:30] User riya toggling like on post 67
+ERROR 2026-04-30 17:56:52,921 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:41] Unauthorized User riya tried to like on private post 67
+WARNING 2026-04-30 17:56:52,924 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Bad Request: /api/likes/posts/67/
+INFO 2026-04-30 17:57:23,280 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\autoreload.py [lineno:265] C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py changed, reloading.
+DEBUG 2026-04-30 17:57:31,642 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:16] user Fetching like or unlike toggle on post id=67  
+DEBUG 2026-04-30 17:57:31,648 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:30] User riya toggling like on post 67
+INFO 2026-04-30 17:57:31,661 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:64] User riya like post: 67
+INFO 2026-04-30 17:57:31,673 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:73] like notification sent to user : shruti
+DEBUG 2026-04-30 17:57:39,972 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:16] user Fetching like or unlike toggle on post id=68  
+DEBUG 2026-04-30 17:57:39,993 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:30] User riya toggling like on post 68
+ERROR 2026-04-30 17:57:40,026 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\likes\serializers.py [lineno:41] Unauthorized User riya tried to like on private post 68
+WARNING 2026-04-30 17:57:40,035 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\env\Lib\site-packages\django\utils\log.py [lineno:249] Bad Request: /api/likes/posts/68/
+DEBUG 2026-04-30 17:57:48,874 C:\Users\shruti ghumaliya\OneDrive\Desktop\django_rest_blog\blog\apps\notifications\serializers.py [lineno:15] Generating notification message by user shruti notification id=26, type=like

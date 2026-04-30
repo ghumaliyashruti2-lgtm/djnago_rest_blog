@@ -1,7 +1,7 @@
 from celery import shared_task
 from apps.posts.models import Post
-import time
-from blog.blog.services.openrouter import OpenRouterClient
+from apps.posts.constants import PostStatus
+from blog.services.openrouter import OpenRouterClient
 import logging
 
 logger = logging.getLogger(__name__)
@@ -11,7 +11,7 @@ def generate_summary(self, post_id):
     try:
         post = Post.objects.get(id=post_id)
 
-        post.status = "processing"
+        post.status = PostStatus.PROCESSING
         post.save()
 
         client = OpenRouterClient()
@@ -22,13 +22,13 @@ def generate_summary(self, post_id):
         )
 
         post.summary = summary
-        post.status = "completed"
+        post.status = PostStatus.COMPLETE
         post.save()
 
     except Exception as e:
         logger.error(f"OpenRouter error: {str(e)}")
 
-        post.status = "failed"
+        post.status = PostStatus.FAILED
         post.save()
 
         raise self.retry(exc=e, countdown=10)

@@ -31,14 +31,14 @@ class ToggleLikeSerializer(serializers.Serializer):
 
         # PRIVATE ACCOUNT CHECK
         if post.user != user:
-            if post.user.is_private:
+            if post.is_private:
                 is_following = Follow.objects.filter(
                     follower=user,
                     following=post.user
                 ).exists()
 
                 if not is_following:
-                    logger.error(f"Unauthorized User {request.user.usename} tried to like on private post {post.id}")
+                    logger.error(f"Unauthorized User {request.user.username} tried to like on private post {post.id}")
                     raise serializers.ValidationError("Account is private")
 
         like = Like.objects.filter(user=user, post=post).first()
